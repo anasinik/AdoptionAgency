@@ -1,6 +1,5 @@
-﻿
-using AdoptionAgency.Backend.Domain.Model.Common;
-using AdoptionAgency.Domain.Model.Person.Member;
+﻿using AdoptionAgency.Backend.Domain.Model.Common;
+using AdoptionAgency.Backend.Domain.Model.Person.Member;
 
 namespace AdoptionAgency.Backend.Domain.Model.Post
 {
