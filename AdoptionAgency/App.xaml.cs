@@ -1,5 +1,8 @@
 ﻿using AdoptionAgency.Backend.Configuration;
+using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Repositories;
+using AdoptionAgency.Backend.Repositories.AnimalRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +30,11 @@ namespace AdoptionAgency
 
                 // NOTE: Add the following line to register a service
                 // services.AddTransient<IExampleRepositry, ExampleRepository>();
+                services.AddTransient<ICrudRepository<Animal>, AnimalRepository>();
+                services.AddTransient<ICrudRepository<AnimalRating>, AnimalRatingRepository>();
+                services.AddTransient<ICrudRepository<AnimalSpecies>, AnimalSpeciesRepository>();
+                services.AddTransient<ICrudRepository<AdoptionRequest>, AdoptionRequestRepository>();
+
             }).Build();
         }
 

@@ -17,6 +17,7 @@ namespace AdoptionAgency.Backend.Domain.Model.Animal
         public double Weight { get; set; }
         public string Size {  get; set; }
         
+        public Animal() { }
         public Animal(int id, AnimalSpecies species, DateTime birthDate, string foundLocation, Place foundPlace,
                       string healthCondition, string behaviour, Gender gender, double weight, string size)
         {

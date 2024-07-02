@@ -10,6 +10,7 @@ namespace AdoptionAgency.Backend.Domain.Model.Animal
         public int Rate {  get; set; }
         public string Description { get; set; }
 
+        public AnimalRating() {}
         public AnimalRating(int id, AdoptionRequest adoption, int rate, string description)
         {
             Id = id;
