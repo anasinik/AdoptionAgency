@@ -1,4 +1,4 @@
-﻿namespace AdoptionAgency.Domain.Model.Person
+﻿namespace AdoptionAgency.Backend.Domain.Model.Person
 {
     public class Administator : Person
     {

@@ -1,7 +1,6 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Common;
-using System.Reflection.Metadata;
 
-namespace AdoptionAgency.Domain.Model.Person.Member
+namespace AdoptionAgency.Backend.Domain.Model.Person.Member
 {
     public class MemberRating
     {

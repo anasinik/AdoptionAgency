@@ -1,5 +1,4 @@
-﻿
-namespace AdoptionAgency.Domain.Model.Person
+﻿namespace AdoptionAgency.Backend.Domain.Model.Person
 {
     public abstract class Person
     {

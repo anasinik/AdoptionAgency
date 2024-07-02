@@ -1,4 +1,4 @@
-﻿namespace AdoptionAgency.Domain.Model.Person.Member
+﻿namespace AdoptionAgency.Backend.Domain.Model.Person.Member
 {
     public class Member : Person
     {
