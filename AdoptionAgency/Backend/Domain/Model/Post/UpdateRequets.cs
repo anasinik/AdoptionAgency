@@ -1,4 +1,5 @@
 ﻿
+using AdoptionAgency.Backend.Domain.Model.Common;
 using AdoptionAgency.Domain.Model.Person.Member;
 
 namespace AdoptionAgency.Backend.Domain.Model.Post
@@ -9,13 +10,15 @@ namespace AdoptionAgency.Backend.Domain.Model.Post
         public string Description { get; set; } = default!;
         public Post Post { get; set; } = default!;
         public Member Member { get; set; } = default!;
+        public Status Status { get; set; } = default!
         public UpdateRequets(){}
-        public UpdateRequets(int id, string description, Post post, Member member)
+        public UpdateRequets(int id, string description, Post post, Member member, Status status)
         {
             Id = id;
             Description = description;
             Post = post;
             Member = member;
+            Status = status;
         }
     }
 }
