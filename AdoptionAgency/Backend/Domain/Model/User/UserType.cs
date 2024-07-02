@@ -1,4 +1,4 @@
-﻿namespace AdoptionAgency.Domain.Model.User
+﻿namespace AdoptionAgency.Backend.Domain.Model.User
 {
     public enum UserType
     {

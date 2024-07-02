@@ -1,13 +1,11 @@
-﻿
-using AdoptionAgency.Backend.Domain.Model.Common;
-using AdoptionAgency.Domain.Model.Person;
+﻿using AdoptionAgency.Backend.Domain.Model.Common;
 
 namespace AdoptionAgency.Backend.Domain.Model.Animal
 {
     public class AdoptionRequest
     {
         public int Id { get; set; }
-        public Person Adopter {  get; set; }
+        public Person.Person Adopter {  get; set; }
         public Animal Animal { get; set; }
         public DateTime SentAt {  get; set; }
         public DateTime ReceivedAt {  get; set; }
@@ -15,7 +13,8 @@ namespace AdoptionAgency.Backend.Domain.Model.Animal
         public DateTime FosterUntil {  get; set; }  // If it's a permanent adoption, this date is null
 
         public AdoptionRequest() { } 
-        public AdoptionRequest(int id, Person adopter, Animal animal, DateTime sentAt, DateTime receivedAt, Status status, DateTime fosterUntil)
+        public AdoptionRequest(int id, Person.Person adopter, Animal animal, DateTime sentAt, DateTime receivedAt, Status status, DateTime fosterUntil)
+
         {
             Id = id;
             Adopter = adopter;

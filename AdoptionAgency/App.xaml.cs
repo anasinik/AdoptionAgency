@@ -28,8 +28,7 @@ namespace AdoptionAgency
                 services.AddDbContext<DatabaseContext>(options =>
                     options.UseNpgsql(databaseConfig.GetConnectionString()));
 
-                // NOTE: Add the following line to register a service
-                // services.AddTransient<IExampleRepositry, ExampleRepository>();
+                services.AddTransient<IPersonRepository, PersonRepository>();
                 services.AddTransient<ICrudRepository<Animal>, AnimalRepository>();
                 services.AddTransient<ICrudRepository<AnimalRating>, AnimalRatingRepository>();
                 services.AddTransient<ICrudRepository<AnimalSpecies>, AnimalSpeciesRepository>();
