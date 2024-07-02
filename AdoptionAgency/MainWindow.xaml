@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:AdoptionAgency"
         mc:Ignorable="d"
         Title="AdoptionAgency" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            
+        </ContentControl.Resources>
+    </ContentControl>
 </Window>
