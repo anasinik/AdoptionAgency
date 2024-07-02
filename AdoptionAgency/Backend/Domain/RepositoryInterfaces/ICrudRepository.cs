@@ -1,5 +1,4 @@
-﻿
-namespace AdoptionAgency.Backend.Domain.RepositoryInterfaces
+﻿namespace AdoptionAgency.Backend.Domain.RepositoryInterfaces
 {
     public interface ICrudRepository<T>
     {
@@ -7,6 +6,6 @@ namespace AdoptionAgency.Backend.Domain.RepositoryInterfaces
         public List<T> GetAll();
         public int Add(T entity);
         public void Update(T entity);
-        public int Delete(int id);
+        public void Delete(int id);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AdoptionAgency.Backend.Configuration;
+using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,8 +26,8 @@ namespace AdoptionAgency
                 services.AddDbContext<DatabaseContext>(options =>
                     options.UseNpgsql(databaseConfig.GetConnectionString()));
 
-                // NOTE: Add the following line to register a service
-                // services.AddTransient<IExampleRepositry, ExampleRepository>();
+                services.AddTransient<IPersonRepository, PersonRepository>();
+
             }).Build();
         }
 
