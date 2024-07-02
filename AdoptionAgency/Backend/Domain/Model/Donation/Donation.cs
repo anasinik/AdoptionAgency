@@ -7,6 +7,7 @@ namespace AdoptionAgency.Backend.Domain.Model.Donation
         public string From { get; set; }  // bank account  
         public double Amount { get; set; }
         public DonationType Type { get; set; }
+        public string DonorName {  get; set; }
         public Animal.Animal Animal { get; set; }
 
         public Donation(int id, string from, double amount, DonationType type, Animal.Animal animal)
