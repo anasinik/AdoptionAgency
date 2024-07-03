@@ -1,4 +1,5 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Person.Member;
+﻿using AdoptionAgency.Backend.Domain.Model.Person;
+using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Services;
 using AdoptionAgency.Frontend.ViewModel.VolunteerViewModel;
 using System;
@@ -32,7 +33,11 @@ namespace AdoptionAgency.Frontend.View.VolunteerView
         private void AcceptReqBtn(object sender, RoutedEventArgs e)
         {
             var member = ViewModel.SelectedMember;
-            var volunteerService = new PersonService();
+            var personService = new PersonService();
+            //TODO Check if there is need for new User object
+            personService.Add(new Volunteer(member.Id, member.User, member.Name,
+                member.LastName, member.Email, member.PhoneNumber));
+            personService.Delete(member.Id);
             var members = ViewModel.Members;
             members.Remove(member);
         }
