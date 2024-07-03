@@ -2,6 +2,9 @@
 using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Services.AuthentificationService;
+using AdoptionAgency.Frontend.View.Member;
+using AdoptionAgency.Frontend.ViewModel.MemberVM;
+using AdoptionAgency.Frontend.ViewModel.VolunteerVM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,18 +18,18 @@ namespace AdoptionAgency.Frontend.ViewModel
 {
     class MainWindowViewModel : ViewModelBase
     {
-        private string _email = "";
+        private string _username = "";
         private string _password = "";
 
-        public string Email
+        public string Username
         {
-            get { return _email; }
+            get { return _username; }
             set
             {
-                if (value != _email)
+                if (value != _username)
                 {
-                    _email = value;
-                    OnPropertyChanged("Email");
+                    _username = value;
+                    OnPropertyChanged("Username");
                 }
             }
         }
@@ -47,7 +50,7 @@ namespace AdoptionAgency.Frontend.ViewModel
         public MainWindowViewModel() { }
         public bool Login()
         {
-            return TrySignUp(Email, Password);
+            return TrySignUp(Username, Password);
         }
 
         private bool TrySignUp(string email, string password)
@@ -69,17 +72,17 @@ namespace AdoptionAgency.Frontend.ViewModel
         {
             if (user.GetType() == typeof(Member))
             {
-                MemberViewModel memberViewModel = new(user);
-                memberViewModel.Show();
+                MemberView memberView = new();
+                memberView.Show();
             }
             else if (user.GetType() == typeof(Volunteer))
             {
-                VolunteerViewModel tutorViewModel = new(user);
-                tutorViewModel.Show();
+                VolunteerView volunteerView = new();
+                volunteerView.Show();
             }
             else if (user.GetType() == typeof(Administator))
             {
-                AdministatorViewModel administatorViewModel = new(user);
+                Admin administatorViewModel = new(user);
                 administatorViewModel.Show();
             }
         }

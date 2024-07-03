@@ -58,7 +58,7 @@ namespace AdoptionAgency
             navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
             MainWindow = new MainWindow()
             {
-                DataContext = new MainWindowViewModel(navigationStore),
+                DataContext = new MainViewModel(navigationStore),
                 Title = "LangLang"
             };
             MainWindow.Show();

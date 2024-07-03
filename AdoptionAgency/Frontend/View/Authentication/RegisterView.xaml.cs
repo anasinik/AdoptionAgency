@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using AdoptionAgency.Backend.Domain.Model.Common;
+using AdoptionAgency.Frontend.ViewModel.Authentication
+
 
 namespace AdoptionAgency.Frontend.View.Authentication
 {
     /// <summary>
     /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class RegisterView : UserControl
+    public partial class RegisterView : Window
     {
+        public RegisterMemberViewModel ViewModel{ get; set; }
         public RegisterView()
         {
             InitializeComponent();
+            ViewModel = new RegisterMemberViewModel();
+            DataContext = ViewModel;
+            gendercb.ItemsSource = Enum.GetValues(typeof(Gender));
+        }
+        private void SignUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SignUp()) Close();
         }
     }
 }

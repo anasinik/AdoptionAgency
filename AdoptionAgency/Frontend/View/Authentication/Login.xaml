@@ -9,7 +9,7 @@
     <Grid Background="#FFF8FDFA">
         <TextBlock Height="97" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontFamily="Elephant" HorizontalAlignment="Center" Foreground="#FF577B47" FontSize="19" RenderTransformOrigin="0.5,0.5" FlowDirection="RightToLeft" TextAlignment="Center"><Run Text="Welcome to the Animal Adoption Agency "/></TextBlock>
         <!--label and box for email-->
-        <Label x:Name="emaillbl" Content="   email" HorizontalAlignment="Center" Height="26" Margin="0,242,0,0" VerticalAlignment="Top" Width="310" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
+        <Label x:Name="emaillbl" Content="   username" HorizontalAlignment="Center" Height="26" Margin="0,242,0,0" VerticalAlignment="Top" Width="310" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
         <TextBox x:Name="emailtb" HorizontalAlignment="Center" Height="23" Margin="0,219,0,0" TextWrapping="Wrap" 
               BorderThickness="2" VerticalAlignment="Top" Width="310" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
                  Text="{Binding Path=Email}" Padding="1,0,0,0">

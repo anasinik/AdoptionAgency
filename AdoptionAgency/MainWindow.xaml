@@ -10,9 +10,7 @@
         Title="AdoptionAgency" Height="450" Width="800">
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
-            <DataTemplate DataType="{x:Type authentication:RegisterMemberViewModel}">
-                
-            </DataTemplate>
+            
         </ContentControl.Resources>
     </ContentControl>
 </Window>
