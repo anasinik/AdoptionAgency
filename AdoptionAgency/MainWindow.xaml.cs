@@ -14,7 +14,8 @@ namespace AdoptionAgency
         }
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ViewModel.Login()) Close();
+            ViewModel.ShowLoginWindow();
+            Close();
         }
 
         private void SignupBtn_Click(object sender, RoutedEventArgs e)

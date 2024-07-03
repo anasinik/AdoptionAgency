@@ -6,6 +6,7 @@ using AdoptionAgency.Frontend.View.AdminView;
 using AdoptionAgency.Frontend.View.Authentication;
 using AdoptionAgency.Frontend.View.Member;
 using AdoptionAgency.Frontend.View.VolunteerView;
+using AdoptionAgency.Frontend.ViewModel.Authentication;
 using System.ComponentModel;
 using System.Security.Authentication;
 
@@ -86,6 +87,12 @@ namespace AdoptionAgency.Frontend.ViewModel
         {
             var registrationWindow = new RegisterView();
             registrationWindow.Show();
+        }
+
+        public void ShowLoginWindow()
+        {
+            var loginWindow = new Login();
+            loginWindow.Show();
         }
 
 

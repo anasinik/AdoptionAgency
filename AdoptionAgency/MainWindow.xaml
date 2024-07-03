@@ -8,9 +8,21 @@
         xmlns:authenticationView="clr-namespace:AdoptionAgency.Frontend.View.Authentication"
         mc:Ignorable="d"
         Title="AdoptionAgency" Height="450" Width="800">
-    <ContentControl Content="{Binding CurrentViewModel}">
-        <ContentControl.Resources>
-            
-        </ContentControl.Resources>
-    </ContentControl>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="signupBtn" Content="Sign up" Grid.Column="1" Grid.Row="1"
+                Click="SignupBtn_Click"/>
+        <Button x:Name="loginBtn" Content="Login" Grid.Column="1" Grid.Row="2"
+                Click="LoginBtn_Click"/>
+    </Grid>
+        
 </Window>
