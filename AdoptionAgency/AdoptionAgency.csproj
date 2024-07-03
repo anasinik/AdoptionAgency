@@ -22,4 +22,9 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.18" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Resource Include="Frontend\Assets\Icons\continue.png" />
+  </ItemGroup>
+
 </Project>
