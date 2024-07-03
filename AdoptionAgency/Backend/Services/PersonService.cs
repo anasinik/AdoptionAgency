@@ -14,22 +14,22 @@ namespace AdoptionAgency.Backend.Services
             _repository = ServiceProviderHelper.GetService<IPersonRepository>();   
         }
 
-        public int AddPerson(Person person)
+        public int Add(Person person)
         {
             return _repository.Add(person);
         }
 
-        public void DeletePerson(int id)
+        public void Delete(int id)
         {
             _repository.Delete(id);
         }
 
-        public Person? GetPerson(int id)
+        public Person? Get(int id)
         {
             return _repository.Get(id);
         }
 
-        public List<Person> GetAllPersons()
+        public List<Person> GetAll()
         {
             return _repository.GetAll();
         }
@@ -49,7 +49,7 @@ namespace AdoptionAgency.Backend.Services
             return _repository.GetAdministrators();
         }
 
-        public void UpdatePerson(Person person)
+        public void Update(Person person)
         {
             _repository.Update(person);
         }
