@@ -1,10 +1,12 @@
 ﻿using AdoptionAgency.Backend.Configuration;
 using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 using AdoptionAgency.Backend.Repositories;
 using AdoptionAgency.Backend.Repositories.AnimalRepositories;
+using AdoptionAgency.Backend.Repositories.PostRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -36,7 +38,8 @@ namespace AdoptionAgency
                 services.AddTransient<ICrudRepository<AnimalRating>, AnimalRatingRepository>();
                 services.AddTransient<ICrudRepository<AnimalSpecies>, AnimalSpeciesRepository>();
                 services.AddTransient<ICrudRepository<AdoptionRequest>, AdoptionRequestRepository>();
-
+                services.AddTransient<ICrudRepository<Post>, PostRepository>();
+                services.AddTransient<ICrudRepository<Picture>, PictureRepository>();
             }).Build();
         }
 

@@ -13,5 +13,10 @@ namespace AdoptionAgency.Backend.Domain.Model.Animal
             Species = species;
             Breed = breed;
         }
+
+        public override string ToString()
+        {
+            return $"{Species} {Breed}";
+        }
     }
 }
