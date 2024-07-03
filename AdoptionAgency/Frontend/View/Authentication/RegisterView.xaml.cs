@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AdoptionAgency.Frontend.View
+namespace AdoptionAgency.Frontend.View.Authentication
 {
     /// <summary>
     /// Interaction logic for RegisterView.xaml

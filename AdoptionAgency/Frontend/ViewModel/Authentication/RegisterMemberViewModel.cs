@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
-namespace AdoptionAgency.Frontend.ViewModel
+namespace AdoptionAgency.Frontend.ViewModel.Authentication
 {
     public class RegisterMemberViewModel : ViewModelBase
     {
@@ -72,7 +71,7 @@ namespace AdoptionAgency.Frontend.ViewModel
 
         public RegisterMemberViewModel()
         {
-            
+
         }
     }
 }

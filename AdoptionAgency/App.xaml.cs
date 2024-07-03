@@ -1,9 +1,12 @@
 ﻿using AdoptionAgency.Backend.Configuration;
 using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 using AdoptionAgency.Backend.Repositories;
 using AdoptionAgency.Backend.Repositories.AnimalRepositories;
+using AdoptionAgency.Frontend.ViewModel.Authentication;
+using AdoptionAgency.Frontend;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,7 +17,7 @@ namespace AdoptionAgency
     public partial class App : Application
     {
         private readonly IHost _host;
-
+        public static User LoggedUser;
         public App()
         {
             _host = CreateHost();
@@ -50,7 +53,15 @@ namespace AdoptionAgency
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            _host.Start();
+            NavigationStore navigationStore = new NavigationStore();
+
+            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainWindowViewModel(navigationStore),
+                Title = "LangLang"
+            };
+            MainWindow.Show();
             base.OnStartup(e);
         }
 
