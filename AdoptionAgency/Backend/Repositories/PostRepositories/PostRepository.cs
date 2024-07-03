@@ -13,11 +13,11 @@ namespace AdoptionAgency.Backend.Repositories.PostRepositories
             _context = context;
         }
 
-        public int Add(Post post)
+        public Post Add(Post post)
         {
             _context.Post.Add(post);
             _context.SaveChanges();
-            return post.Id;
+            return post;
         }
 
         public void Delete(int id)

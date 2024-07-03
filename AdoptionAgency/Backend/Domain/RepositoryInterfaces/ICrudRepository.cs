@@ -4,7 +4,7 @@
     {
         public T Get(int id);
         public List<T> GetAll();
-        public int Add(T entity);
+        public T Add(T entity);
         public void Update(T entity);
         public void Delete(int id);
     }

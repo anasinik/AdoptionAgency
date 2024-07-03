@@ -1,5 +1,4 @@
-﻿
-using AdoptionAgency.Backend.Domain.Model.Animal;
+﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,11 +13,11 @@ namespace AdoptionAgency.Backend.Repositories.AnimalRepositories
             _context = context;
         }
 
-        public int Add(Animal animal)
+        public Animal Add(Animal animal)
         {
             _context.Animal.Add(animal);
             _context.SaveChanges();
-            return animal.Id;
+            return animal;
         }
 
         public void Delete(int id)
