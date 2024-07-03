@@ -22,9 +22,10 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.18" />
   </ItemGroup>
 
+
   <ItemGroup>
-    <Folder Include="Frontend\ViewModel\AdminViewModel\" />
-    <Folder Include="Frontend\ViewModel\MemberViewModel\" />
+    <Resource Include="Frontend\Assets\Icons\continue.png" />
+    <Resource Include="Frontend\Assets\Logos\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
