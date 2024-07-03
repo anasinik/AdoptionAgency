@@ -1,0 +1,23 @@
+﻿<Window x:Class="AdoptionAgency.Frontend.View.Post.Post"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdoptionAgency.Frontend.View.Post"
+        mc:Ignorable="d"
+        Title="Post" Height="770" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Create post" HorizontalAlignment="Center" Height="62" VerticalAlignment="Center" Width="175" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" FontStyle="Italic" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Image Source="/Frontend/Assets/Logos/logo.png" Width="58" Height="53" Margin="260,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Grid Grid.Row="1" x:Name="contentGrid"></Grid>
+        
+    </Grid>
+</Window>
+

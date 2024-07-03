@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="750" d:DesignWidth="800">
+             d:DesignHeight="690" d:DesignWidth="800">
     <Grid Background="#FFF8FDFA">
 
-        <Label Content="Please enter information about the animal" HorizontalAlignment="Center" Height="35" Margin="0,52,0,0" VerticalAlignment="Top" Width="644" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" FontStyle="Italic" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Please enter information about the animal" HorizontalAlignment="Center" Height="35" Margin="0,33,0,0" VerticalAlignment="Top" Width="644" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" FontStyle="Italic" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
         <!-- first group box-->
-        <GroupBox Header="Animal spieces" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0" Width="700" Height="192">
+        <GroupBox Header="Animal spieces" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,92,0,0" Width="700" Height="192">
             <Grid Margin="0,0,0,0" Background="#FFEDEDED" >
 
                 <Expander HorizontalAlignment="Left" Height="88" Margin="61,36,0,0" VerticalAlignment="Top" Width="164">
@@ -36,7 +36,7 @@
         </GroupBox>
 
         <!--second text box-->
-        <GroupBox Header="Animal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Width="700" Height="300">
+        <GroupBox Header="Animal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,299,0,0" Width="700" Height="300">
             <Grid Background="#FFEDEDED" Margin="0,0,0,0">
 
                 <!--animal behaviour-->
@@ -88,8 +88,8 @@
             </Grid>
         </GroupBox>
 
-        <Button Margin="648,632,50,30">
-            <Image Source="/Frontend/Assets/Icons/continue.png" Width="90" />
+        <Button Margin="657,604,50,10" Click="NextPage_Click">
+            <Image Source="/Frontend/Assets/Icons/continue.png" Stretch="Fill" Width="73"/>
         </Button>
     </Grid>
 

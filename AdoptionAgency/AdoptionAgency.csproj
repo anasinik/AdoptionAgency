@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <Resource Include="Frontend\Assets\Icons\continue.png" />
+    <Resource Include="Frontend\Assets\Logos\logo.png" />
   </ItemGroup>
 
 </Project>
