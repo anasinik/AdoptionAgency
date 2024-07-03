@@ -30,7 +30,7 @@ namespace AdoptionAgency.Frontend.ViewModel.VolunteerViewModel
             {
                 _members.Add(new MemberViewModel((Member)member));
             }
-        MembersView = new ListCollectionView(_members);
+            MembersView = new ListCollectionView(_members);
         }
     }
 }

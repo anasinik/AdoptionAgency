@@ -1,13 +1,5 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.Model.User;
-using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace AdoptionAgency.Frontend.ViewModel.MemberVM
 {
@@ -37,6 +29,15 @@ namespace AdoptionAgency.Frontend.ViewModel.MemberVM
             set
             {
                 Password = value;
+                OnPropertyChanged();
+            }
+        }
+        public User User
+        {
+            get => User;
+            set
+            {
+                User = value;
                 OnPropertyChanged();
             }
         }
