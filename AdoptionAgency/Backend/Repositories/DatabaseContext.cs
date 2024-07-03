@@ -1,17 +1,20 @@
 using AdoptionAgency.Backend.Configuration;
 using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.Model.Person;
+using AdoptionAgency.Backend.Domain.Model.Post;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdoptionAgency.Backend.Repositories
 {
     public class DatabaseContext : DbContext
     {
+        public DbSet<Person> Person { get; set; }
         public DbSet<Animal> Animal {  get; set; }
         public DbSet<AnimalSpecies> AnimalSpecies { get; set; }
         public DbSet<AnimalRating> AnimalRating { get; set; }
         public DbSet<AdoptionRequest> AdoptionRequest {  get; set; }
-        public DbSet<Person> Person { get; set; }
+        public DbSet<Post> Post { get; set; }
+        public DbSet<Picture> Picture { get; set; }
 
         public DatabaseContext() { }
 
@@ -22,11 +25,15 @@ namespace AdoptionAgency.Backend.Repositories
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Person>().ToTable(nameof(Person));
+            ConfigurePersonEntity(modelBuilder);
+
             modelBuilder.Entity<Animal>().ToTable(nameof(Animal));
             modelBuilder.Entity<AnimalSpecies>().ToTable(nameof(AnimalSpecies));
             modelBuilder.Entity<AnimalRating>().ToTable(nameof(AnimalRating));
             modelBuilder.Entity<AdoptionRequest>().ToTable(nameof(AdoptionRequest));
-            ConfigurePersonEntity(modelBuilder);
+
+            modelBuilder.Entity<Post>().ToTable(nameof(Post));
+            modelBuilder.Entity<Picture>().ToTable(nameof(Picture));
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
