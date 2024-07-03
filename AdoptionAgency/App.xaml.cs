@@ -1,5 +1,6 @@
 ﻿using AdoptionAgency.Backend.Configuration;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
+using AdoptionAgency.Backend.Helpers;
 using AdoptionAgency.Backend.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,7 @@ namespace AdoptionAgency
         public App()
         {
             _host = CreateHost();
+            ServiceProviderHelper.SetServiceProvider(_host.Services as ServiceProvider);
             ApplyMigrations();
         }
 
