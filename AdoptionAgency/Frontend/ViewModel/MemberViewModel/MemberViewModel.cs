@@ -1,11 +1,13 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.Model.User;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace AdoptionAgency.Frontend.ViewModel.MemberVM
 {
@@ -20,12 +22,21 @@ namespace AdoptionAgency.Frontend.ViewModel.MemberVM
                 OnPropertyChanged();
             } 
         }
-        public User User 
+        public string Username 
         {
-            get => User;
+            get => Username;
             set
             {
-                User = value;
+                Username = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Password
+        {
+            get => Password;
+            set
+            {
+                Password = value;
                 OnPropertyChanged();
             }
         }
@@ -67,10 +78,21 @@ namespace AdoptionAgency.Frontend.ViewModel.MemberVM
         }
 
         public MemberViewModel() { }
+        public MemberViewModel(Member member)
+        {
+            Id = member.Id;
+            Username = member.User.Username;
+            Password = member.User.Password;
+            Name = member.Name;
+            LastName = member.LastName;
+            Email = member.Email;
+            PhoneNumber = member.PhoneNumber;
+        }
         public MemberViewModel(int id, User user, string name, string lastName, string email, string phoneNumber)
         {
             Id = id;
-            User = user;
+            Username = user.Username;
+            Password = user.Password;
             Name = name;
             LastName = lastName;
             Email = email;
