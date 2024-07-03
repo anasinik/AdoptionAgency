@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using AdoptionAgency.Frontend.ViewModel;
 
 namespace AdoptionAgency
 {
@@ -53,12 +54,10 @@ namespace AdoptionAgency
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            NavigationStore navigationStore = new NavigationStore();
 
-            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel(navigationStore),
+                DataContext = new MainWindowViewModel(),
                 Title = "LangLang"
             };
             MainWindow.Show();

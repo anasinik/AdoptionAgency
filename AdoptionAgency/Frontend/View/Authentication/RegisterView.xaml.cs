@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using AdoptionAgency.Backend.Domain.Model.Common;
-using AdoptionAgency.Frontend.ViewModel.Authentication
+using AdoptionAgency.Frontend.ViewModel.Authentication;
 
 
 namespace AdoptionAgency.Frontend.View.Authentication
@@ -10,11 +10,11 @@ namespace AdoptionAgency.Frontend.View.Authentication
     /// </summary>
     public partial class RegisterView : Window
     {
-        public RegisterMemberViewModel ViewModel{ get; set; }
+        public RegisterViewModel ViewModel{ get; set; }
         public RegisterView()
         {
             InitializeComponent();
-            ViewModel = new RegisterMemberViewModel();
+            ViewModel = new RegisterViewModel();
             DataContext = ViewModel;
             gendercb.ItemsSource = Enum.GetValues(typeof(Gender));
         }

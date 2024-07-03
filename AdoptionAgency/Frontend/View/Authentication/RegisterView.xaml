@@ -63,6 +63,6 @@
             </TextBox>
         </StackPanel>
         <Button x:Name="loginBtn" Content="Register"  
-        Click="LoginBtn_Click" Grid.Row="2" Grid.Column="1"/>
+        Click="SignUp_Click" Grid.Row="2" Grid.Column="1"/>
     </Grid>
 </Window>

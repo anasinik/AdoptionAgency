@@ -1,4 +1,5 @@
-﻿using AdoptionAgency.Frontend.ViewModel.MemberVM;
+﻿using AdoptionAgency.Backend.Services;
+using AdoptionAgency.Frontend.ViewModel.MemberVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,8 @@ namespace AdoptionAgency.Frontend.ViewModel.Authentication
         }
         public bool SignUp()
         {
-            //memberService.Add(Member.ToMember());
+            var personService = new PersonService();
+            personService.Add(Member.ToMember());
             MessageBox.Show("Success!");
             return true;
         }

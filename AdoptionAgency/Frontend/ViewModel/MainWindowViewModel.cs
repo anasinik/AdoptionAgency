@@ -2,21 +2,16 @@
 using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Services.AuthentificationService;
+using AdoptionAgency.Frontend.View.AdminView;
+using AdoptionAgency.Frontend.View.Authentication;
 using AdoptionAgency.Frontend.View.Member;
-using AdoptionAgency.Frontend.ViewModel.MemberVM;
-using AdoptionAgency.Frontend.ViewModel.VolunteerVM;
-using System;
-using System.Collections.Generic;
+using AdoptionAgency.Frontend.View.VolunteerView;
 using System.ComponentModel;
-using System.Linq;
 using System.Security.Authentication;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AdoptionAgency.Frontend.ViewModel
 {
-    class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase
     {
         private string _username = "";
         private string _password = "";
@@ -82,14 +77,14 @@ namespace AdoptionAgency.Frontend.ViewModel
             }
             else if (user.GetType() == typeof(Administator))
             {
-                Admin administatorViewModel = new(user);
-                administatorViewModel.Show();
+                AdminView administatorView = new();
+                administatorView.Show();
             }
         }
 
         public void ShowRegistrationWindow()
         {
-            var registrationWindow = new RegisterMemberViewModel();
+            var registrationWindow = new RegisterView();
             registrationWindow.Show();
         }
 
