@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AdoptionAgency.Frontend.View
+namespace AdoptionAgency.Frontend.View.AdminView
 {
     /// <summary>
-    /// Interaction logic for RegisterView.xaml
+    /// Interaction logic for AdminView.xaml
     /// </summary>
-    public partial class RegisterView : UserControl
+    public partial class AdminView : Window
     {
-        public RegisterView()
+        public AdminView()
         {
             InitializeComponent();
         }
