@@ -19,5 +19,13 @@
             Email = email;
             PhoneNumber = phoneNumber;
         }
+        public Person(User.User user, string name, string lastName, string email, string phoneNumber)
+        {
+            User = user;
+            Name = name;
+            LastName = lastName;
+            Email = email;
+            PhoneNumber = phoneNumber;
+        }
     }
 }
