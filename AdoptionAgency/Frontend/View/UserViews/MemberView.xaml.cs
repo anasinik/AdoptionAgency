@@ -42,7 +42,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
         {
             AdoptionRequest request = new()
             {
-                Adopter = post.Person, // TODO: when loggedIn is saved
+                Adopter = App.LoggedIn,
                 Animal = post.Animal,
                 SentAt = DateTime.Now,
                 ReceivedAt = DateTime.Now,
@@ -63,8 +63,9 @@ namespace AdoptionAgency.Frontend.View.UserViews
             window.Show();
         }
 
-        private void logoutBtn_Click(object sender, RoutedEventArgs e)
+        private void LogoutBtn_Click(object sender, RoutedEventArgs e)
         {
+            App.LoggedIn = null;
             Close();
         }
     }
