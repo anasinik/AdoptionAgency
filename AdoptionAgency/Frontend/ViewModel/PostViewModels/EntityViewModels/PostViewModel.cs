@@ -65,7 +65,7 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
 
         public Post ToPost()
         {
-            return new Post(Id, Pictures, Animal, Person, Status, Description);
+            return new Post(Id, Pictures, Animal, Person, Status, Description, DateTime.Now);
         }
 
         public PostViewModel(Post post)

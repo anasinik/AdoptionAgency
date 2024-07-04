@@ -17,13 +17,14 @@ namespace AdoptionAgency.Frontend.ViewModel.VolunteerViewModel
         {
             Posts = new ObservableCollection<PostViewModel>();
             AdoptionRequest = new();
-            var postService = new PostService();
-            _posts = postService.GetAccepted();
             SetPosts();
         }
 
         private void SetPosts()
         {
+            var postService = new PostService();
+            _posts = postService.GetAccepted();
+            _posts = _posts.OrderByDescending(post => post.DatePublished).ToList();
             foreach (var post in _posts)
             {
                 Posts.Add(new(post));
