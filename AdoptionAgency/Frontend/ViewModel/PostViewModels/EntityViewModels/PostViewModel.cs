@@ -19,6 +19,8 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
         public Status Status { get; set; }
         public string IconPath { get; set; }
 
+        public string Author { get; set; }
+
         private string description;
 
         public string Description
@@ -78,7 +80,7 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
             if (!post.Animal.Adopted)
                 IconPath = "/Frontend/Assets/Icons/homeless.png";
             else IconPath = "/Frontend/Assets/Icons/adopted.png";
-
+            Author = $"{post.Person.Name} {post.Person.LastName}";
 
         }
     }

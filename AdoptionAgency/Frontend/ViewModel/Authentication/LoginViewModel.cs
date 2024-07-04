@@ -1,20 +1,13 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Person.Member;
-using AdoptionAgency.Backend.Domain.Model.Person;
+﻿using AdoptionAgency.Backend.Domain.Model.Person;
+using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Services.AuthentificationService;
 using AdoptionAgency.Frontend.View.AdminView;
-using AdoptionAgency.Frontend.View.Member;
-using AdoptionAgency.Frontend.View.VolunteerView;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Authentication;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using AdoptionAgency.Frontend.View.Authentication;
+using AdoptionAgency.Frontend.View.UserViews;
+using AdoptionAgency.Frontend.View.VolunteerView;
 using System.ComponentModel;
+using System.Security.Authentication;
 
 namespace AdoptionAgency.Frontend.ViewModel.Authentication
 {

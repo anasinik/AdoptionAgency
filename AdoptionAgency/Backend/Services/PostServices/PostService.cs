@@ -1,4 +1,5 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Post;
+﻿using AdoptionAgency.Backend.Domain.Model.Common;
+using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 
@@ -38,5 +39,9 @@ namespace AdoptionAgency.Backend.Services.PostServices
             _repository.Update(post);
         }
 
+        internal List<Post> GetAccepted()
+        {
+            return _repository.GetAll().Where(p => p.Status == Status.Accepted).ToList();
+        }
     }
 }

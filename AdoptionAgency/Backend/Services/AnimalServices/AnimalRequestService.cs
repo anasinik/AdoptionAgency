@@ -1,4 +1,5 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Domain.Model.Person;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 
@@ -6,11 +7,11 @@ namespace AdoptionAgency.Backend.Services.AnimalServices
 {
     public class AdoptionRequestService
     {
-        private readonly ICrudRepository<AdoptionRequest> _repository;
+        private readonly IAdoptionRequestRepository _repository;
 
         public AdoptionRequestService()
         {
-            _repository = ServiceProviderHelper.GetService<ICrudRepository<AdoptionRequest>>();
+            _repository = ServiceProviderHelper.GetService<IAdoptionRequestRepository>();
         }
 
         public AdoptionRequest Add(AdoptionRequest adoptionRequest)
@@ -36,6 +37,11 @@ namespace AdoptionAgency.Backend.Services.AnimalServices
         public void Update(AdoptionRequest adoptionRequest)
         {
             _repository.Update(adoptionRequest);
+        }
+
+        public bool Exists(Animal animal, Person person)
+        {
+            return _repository.Exists(animal, person);
         }
     }
 }

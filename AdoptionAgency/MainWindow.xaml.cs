@@ -1,4 +1,4 @@
-﻿using AdoptionAgency.Backend.Services;
+﻿using AdoptionAgency.Backend.Services.AnimalServices;
 using AdoptionAgency.Backend.Services.PostServices;
 using AdoptionAgency.Frontend.ViewModel;
 using System.Windows;
@@ -12,7 +12,9 @@ namespace AdoptionAgency
         public MainWindow()
         {
             var postService = new PostService();
-            ViewModel = new(postService.GetAll());
+            var animalService = new AnimalService();
+            animalService.GetAll();
+            ViewModel = new(postService.GetAccepted());
             DataContext = ViewModel;
             InitializeComponent();
         }

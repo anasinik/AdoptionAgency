@@ -1,10 +1,11 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Domain.Model.Person;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdoptionAgency.Backend.Repositories.AnimalRepositories
 {
-    public class AdoptionRequestRepository : ICrudRepository<AdoptionRequest>
+    public class AdoptionRequestRepository : IAdoptionRequestRepository
     {
         private readonly DatabaseContext _context;
 
@@ -47,6 +48,13 @@ namespace AdoptionAgency.Backend.Repositories.AnimalRepositories
 
             _context.AdoptionRequest.Update(exising);
             _context.SaveChanges();
+        }
+
+        public bool Exists(Animal animal, Person person)
+        {
+            return _context.AdoptionRequest.Any
+                (request => request.Animal.Id == animal.Id 
+                && request.Adopter.Id == person.Id);
         }
     }
 }
