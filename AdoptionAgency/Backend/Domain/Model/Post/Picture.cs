@@ -9,5 +9,11 @@
             Id = id;
             Path = path;
         }
+
+        public Picture(string path)
+        {
+            Path = path;
+        }
+
     }
 }

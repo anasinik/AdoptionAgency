@@ -5,7 +5,7 @@ using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Frontend.View.Common;
 using AdoptionAgency.Frontend.ViewModel;
 
-namespace AdoptionAgency.Backend.ViewModel.PostViewModels
+namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
 {
     public class PostViewModel : ViewModelBase
     {

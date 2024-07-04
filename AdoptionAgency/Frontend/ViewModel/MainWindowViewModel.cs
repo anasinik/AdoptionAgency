@@ -1,5 +1,5 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Post;
-using AdoptionAgency.Backend.ViewModel.PostViewModels;
+using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 using System.Collections.ObjectModel;
 
 namespace AdoptionAgency.Frontend.ViewModel
