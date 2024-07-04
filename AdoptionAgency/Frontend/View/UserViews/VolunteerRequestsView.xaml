@@ -21,7 +21,7 @@
             <RowDefinition Height="2.5*"/>
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Column="1" Margin="0,10,0,29" ItemsSource="{Binding MembersView}" HorizontalAlignment="Left" SelectedItem="{Binding SelectedMember}" Width="620" Grid.Row="1">
+        <ListView Grid.Column="1" Margin="0,10,0,29" ItemsSource="{Binding Members}" HorizontalAlignment="Left" SelectedItem="{Binding SelectedMember}" Width="620" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Username}" Header="Username"/>

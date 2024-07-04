@@ -1,82 +1,20 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Person.Member;
+﻿using AdoptionAgency.Backend.Domain.Model.Common;
+using AdoptionAgency.Backend.Domain.Model.Person;
+using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.Model.User;
 
 namespace AdoptionAgency.Frontend.ViewModel.MemberViewModels
 {
     public class MemberViewModel : ViewModelBase
     {
-        public int Id 
-        {
-            get => Id;
-            set
-            {
-                Id = value; 
-                OnPropertyChanged();
-            } 
-        }
-        public string Username 
-        {
-            get => Username;
-            set
-            {
-                Username = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Password
-        {
-            get => Password;
-            set
-            {
-                Password = value;
-                OnPropertyChanged();
-            }
-        }
-        public User User
-        {
-            get => User;
-            set
-            {
-                User = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Name
-        {
-            get => Name;
-            set
-            {
-                Name = value;
-                OnPropertyChanged();
-            }
-        }
-        public string LastName
-        {
-            get => LastName;
-            set
-            {
-                LastName = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Email
-        {
-            get => Email;
-            set
-            {
-                Email = value;
-                OnPropertyChanged();
-            }
-        }
-        public string PhoneNumber
-        {
-            get => PhoneNumber;
-            set
-            {
-                PhoneNumber = value;
-                OnPropertyChanged();
-            }
-        }
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public User User { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
 
         public MemberViewModel() { }
         public MemberViewModel(Member member)
@@ -84,6 +22,19 @@ namespace AdoptionAgency.Frontend.ViewModel.MemberViewModels
             Id = member.Id;
             Username = member.User.Username;
             Password = member.User.Password;
+            User = new User(Username, Password, Status.Pending);
+            Name = member.Name;
+            LastName = member.LastName;
+            Email = member.Email;
+            PhoneNumber = member.PhoneNumber;
+        }
+
+        public MemberViewModel(Person member)
+        {
+            Id = member.Id;
+            Username = member.User.Username;
+            Password = member.User.Password;
+            User = new User(Username, Password, Status.Pending);
             Name = member.Name;
             LastName = member.LastName;
             Email = member.Email;

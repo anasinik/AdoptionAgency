@@ -1,6 +1,7 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Person;
 using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace AdoptionAgency.Backend.Repositories
 {
@@ -54,9 +55,14 @@ namespace AdoptionAgency.Backend.Repositories
 
         public void Update(Person person)
         {
+            var existing = _context.Person.Find(person.Id);
+            if (existing == null)
+            {
+                return;
+            }
+            _context.Entry(existing).State = EntityState.Detached;
             _context.Person.Update(person);
             _context.SaveChanges();
         }
-
     }
 }

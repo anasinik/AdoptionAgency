@@ -1,4 +1,6 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Person;
+﻿using AdoptionAgency.Backend.Domain.Model.Common;
+using AdoptionAgency.Backend.Domain.Model.Person;
+using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 
@@ -8,6 +10,7 @@ namespace AdoptionAgency.Backend.Services
     {
 
         private readonly IPersonRepository _repository;
+        private Status Pending;
 
         public PersonService()
         {
@@ -42,7 +45,7 @@ namespace AdoptionAgency.Backend.Services
         public List<Person> GetPendingMembers()
         {
             return _repository.GetMembers()
-                .Where(u => u.User.Status == Domain.Model.Common.Status.Pending)
+                .Where(u => u.User.Status == Pending)
                 .ToList();
         }
 

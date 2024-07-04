@@ -20,8 +20,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
             member.User.Status = Status.Accepted;
             var personService = new PersonService();
             personService.Update(member.ToMember());
-            var members = ViewModel.Members;
-            members.Remove(member);
+            ViewModel.SetPosts();
         }
         private void RejectReqBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -29,8 +28,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
             member.User.Status = Status.Rejected;
             var personService = new PersonService();
             personService.Update(member.ToMember());
-            var members = ViewModel.Members;
-            members.Remove(member);
+            ViewModel.SetPosts();
         }
     }
 }
