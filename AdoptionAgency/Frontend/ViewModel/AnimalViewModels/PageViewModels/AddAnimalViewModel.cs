@@ -1,4 +1,5 @@
-﻿using AdoptionAgency.Backend.Services.AnimalServices;
+﻿using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Services.AnimalServices;
 using AdoptionAgency.Frontend.ViewModel.AnimalViewModels.EntityViewModels;
 using System.Windows.Forms;
 
@@ -22,11 +23,12 @@ namespace AdoptionAgency.Frontend.ViewModel.AnimalViewModels.PageViewModels
             ShowSuccess("Animal species successfully added!");
         }
 
-        public void AddAnimal()
+        public Animal AddAnimal()
         {
             var animalService = new AnimalService();
-            animalService.Add(Animal.ToAnimal());
+            var animal = animalService.Add(Animal.ToAnimal());
             ShowSuccess("Animal species successfully added!");
+            return animal;
         }
 
         private void ShowSuccess(string text)
