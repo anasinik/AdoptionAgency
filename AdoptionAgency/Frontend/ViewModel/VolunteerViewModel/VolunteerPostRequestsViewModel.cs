@@ -19,14 +19,15 @@ namespace AdoptionAgency.Frontend.ViewModel.VolunteerViewModel
         public VolunteerPostRequestsViewModel()
         {
             Posts = new ObservableCollection<PostViewModel>();
-            AdoptionRequest = new();
-            var postService = new PostService();
-            _posts = postService.GetAll();
             SetPosts();
         }
 
-        private void SetPosts()
+        public void SetPosts()
         {
+            var postService = new PostService();
+            var temp = postService.GetAll();
+            Posts.Clear();
+            _posts = postService.GetAllPending();
             foreach (var post in _posts)
             {
                 Posts.Add(new(post));

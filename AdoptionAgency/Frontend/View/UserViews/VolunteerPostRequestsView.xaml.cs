@@ -31,6 +31,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
             post.Status = Backend.Domain.Model.Common.Status.Accepted;
             postsListBox.SelectedItem = post;
             postService.Update(post.ToPost());
+            ViewModel.SetPosts();
         }
 
         private void RejectBtn_Click(object sender, RoutedEventArgs e)
@@ -44,6 +45,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
             post.Status = Backend.Domain.Model.Common.Status.Rejected;
             postsListBox.SelectedItem = post;
             postService.Update(post.ToPost());
+            ViewModel.SetPosts();
         }
     }
 }

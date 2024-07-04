@@ -109,9 +109,9 @@
                                 </StackPanel>
 
                                 <ContentControl Content="{Binding ImageDisplays}" Margin="0,10,0,0" Width="450" Height="300"/>
-                                <Button x:Name="acceptBtn" Content="Adopt" Height="33" Width="100" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
+                                <Button x:Name="acceptBtn" Content="Accept" Height="33" Width="100" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
                                     HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,0,0" Click="AcceptBtn_Click"/>
-                                <Button x:Name="rejectBtn" Content="Adopt" Height="33" Width="100" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
+                                <Button x:Name="rejectBtn" Content="Reject" Height="33" Width="100" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
                                     HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,0,0" Click="RejectBtn_Click"/>
 
                             </StackPanel>
