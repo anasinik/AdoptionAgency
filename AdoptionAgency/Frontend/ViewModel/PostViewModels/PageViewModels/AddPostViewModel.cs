@@ -1,7 +1,6 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Common;
 using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Backend.Domain.Model.User;
-using AdoptionAgency.Backend.Services;
 using AdoptionAgency.Backend.Services.PostServices;
 using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 using Microsoft.Win32;
@@ -77,10 +76,7 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.PageViewModels
         {
             var postService = new PostService();
 
-            // TODO: next 2 lines are temporary, shoud be loggedIn
-            // uncomment -> Post.Person = LoggedIn;
-            var personService = new PersonService();
-            Post.Person = personService.GetAll()[1];
+            Post.Person = App.LoggedIn;
 
             if (Post.Description == null || Post.Pictures.Count == 0)
             {

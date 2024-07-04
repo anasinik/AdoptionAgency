@@ -2,20 +2,20 @@
 using AdoptionAgency.Backend.Domain.Model.Common;
 using AdoptionAgency.Backend.Services.AnimalServices;
 using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
-using AdoptionAgency.Frontend.ViewModel.MemberViewModels;
+using AdoptionAgency.Frontend.ViewModel.VolunteerViewModel;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace AdoptionAgency.Frontend.View.UserViews
 {
-    public partial class MemberView : Window
+    public partial class VolunteerView : Window
     {
-        public MemberPageViewModel viewModel {  get; set; }
-        public MemberView()
+        public VolunteerPageViewModel ViewModel { get; set; }
+        public VolunteerView()
         {
             InitializeComponent();
-            viewModel = new();
-            DataContext = viewModel;
+            ViewModel = new VolunteerPageViewModel();
+            DataContext = ViewModel;
         }
 
         private void AdoptBtn_Click(object sender, RoutedEventArgs e)
@@ -42,7 +42,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
         {
             AdoptionRequest request = new()
             {
-                Adopter = App.LoggedIn,
+                Adopter = post.Person, // TODO: when loggedIn is saved
                 Animal = post.Animal,
                 SentAt = DateTime.Now,
                 ReceivedAt = DateTime.Now,
@@ -52,6 +52,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
             AdoptionConfirmation confirmation = new(request);
             confirmation.Show();
         }
+
         private void ShowInfo(string text)
         {
             MessageBox.Show(text, "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -65,8 +66,13 @@ namespace AdoptionAgency.Frontend.View.UserViews
 
         private void LogoutBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.LoggedIn = null;
             Close();
+        }
+
+        private void ViewRegReqBtn_Click(object sender, RoutedEventArgs e)
+        {
+            VolunteerRequestsView window = new();
+            window.Show();
         }
     }
 }

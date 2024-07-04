@@ -34,6 +34,11 @@ namespace AdoptionAgency.Backend.Services.PostServices
             return _repository.GetAll();
         }
 
+        public List<Post> GetAllPending()
+        {
+            return _repository.GetAll().Where(p => p.Status == Status.Pending).ToList();
+        }
+
         public void Update(Post post)
         {
             _repository.Update(post);

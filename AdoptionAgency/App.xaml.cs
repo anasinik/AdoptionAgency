@@ -17,7 +17,7 @@ namespace AdoptionAgency
     public partial class App : Application
     {
         private readonly IHost _host;
-        public static Person? LoggedPerson;
+        public static Person? LoggedIn;
 
         public App()
         {
