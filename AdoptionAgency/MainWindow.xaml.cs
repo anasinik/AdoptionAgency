@@ -12,26 +12,24 @@ namespace AdoptionAgency
 
         public MainWindow()
         {
+            InitializeComponent();
             var postService = new PostService();
             var animalService = new AnimalService();
             animalService.GetAll();
             ViewModel = new(postService.GetAccepted());
             DataContext = ViewModel;
-            InitializeComponent();
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            Close();
+            var window = new Login(this);
+            window.Show();
         }
 
         private void SignupBtn_Click(object sender, RoutedEventArgs e)
         {
-            RegisterView registerView = new RegisterView();
-            registerView.Show();
-            Close();
+            var window = new RegisterView();
+            window.Show();
         }
     }
 }

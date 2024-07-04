@@ -1,10 +1,10 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.Model.Common;
 using AdoptionAgency.Backend.Services.AnimalServices;
+using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 using AdoptionAgency.Frontend.ViewModel.MemberViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 
 namespace AdoptionAgency.Frontend.View.UserViews
 {
@@ -57,5 +57,15 @@ namespace AdoptionAgency.Frontend.View.UserViews
             MessageBox.Show(text, "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        private void AddPostBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Post.Post();
+            window.Show();
+        }
+
+        private void logoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

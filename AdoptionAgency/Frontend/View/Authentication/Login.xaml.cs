@@ -6,13 +6,15 @@ using System.Windows;
 namespace AdoptionAgency.Frontend.View.Authentication
 {
     public partial class Login : Window
-    {
+    { 
         public LoginViewModel ViewModel { get; set; }
-        public Login()
+        private MainWindow MainWindow { get; set; }
+        public Login(MainWindow mainWindow)
         {
             ViewModel = new();
             DataContext = ViewModel;
             InitializeComponent();
+            MainWindow = mainWindow;
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
@@ -20,7 +22,11 @@ namespace AdoptionAgency.Frontend.View.Authentication
             var loginService = new LoginService();
             App.LoggedPerson = loginService
                 .GetByCredentials(ViewModel.UserName, ViewModel.Password);
-            if (ViewModel.Login()) Close();
+            if (ViewModel.Login())
+            {
+                Close();
+                MainWindow.Close();
+            }
         }
     }
 }
