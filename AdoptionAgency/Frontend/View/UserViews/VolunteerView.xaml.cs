@@ -62,6 +62,7 @@ namespace AdoptionAgency.Frontend.View.UserViews
         {
             var window = new Post.Post();
             window.Show();
+            Close();
         }
 
         private void LogoutBtn_Click(object sender, RoutedEventArgs e)
@@ -73,6 +74,13 @@ namespace AdoptionAgency.Frontend.View.UserViews
         {
             VolunteerRequestsView window = new();
             window.Show();
+        }
+
+        private void viewPostReqBtn_Click(object sender, RoutedEventArgs e)
+        {
+            VolunteerPostRequestsView window = new();
+            window.Show();
+            Close();
         }
     }
 }

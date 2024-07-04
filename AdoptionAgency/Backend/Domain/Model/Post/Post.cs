@@ -11,8 +11,9 @@ namespace AdoptionAgency.Backend.Domain.Model.Post
         public int PersonId { get; set; }
         public Status Status { get; set; } = default!;
         public string Description { get; set; } = default!;
+        public DateTime DatePublished { get; set; }
         public Post(){}
-        public Post(int id, List<Picture> pictures, Animal.Animal animal,Person.Person person, Status status, string description)
+        public Post(int id, List<Picture> pictures, Animal.Animal animal,Person.Person person, Status status, string description, DateTime datePublished)
         {
             Id = id;
             Pictures = pictures;
@@ -20,6 +21,7 @@ namespace AdoptionAgency.Backend.Domain.Model.Post
             Person = person;
             Status = status;
             Description = description;
+            DatePublished = datePublished;
         }
     }
 }

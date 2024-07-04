@@ -38,7 +38,7 @@
             <Button x:Name="addPostBtn" Content="Add new post" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
                          Margin="10,0" Height="33" Width="150" Click="AddPostBtn_Click"/>
             <Button x:Name="viewPostReqBtn" Content="View post requests" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
-                         Margin="10,0" Height="33" Width="150"/>
+                         Margin="10,0" Height="33" Width="150" Click="viewPostReqBtn_Click"/>
             <Button x:Name="viewRegReqBtn" Content="View registration requests" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
                          Margin="10,0" Height="33" Width="164" Click="ViewRegReqBtn_Click"/>
         </StackPanel>
