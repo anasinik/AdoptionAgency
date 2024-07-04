@@ -28,7 +28,7 @@ namespace AdoptionAgency
 
         private void SignupBtn_Click(object sender, RoutedEventArgs e)
         {
-            var window = new RegisterView();
+            var window = new RegisterView(this);
             window.Show();
         }
     }

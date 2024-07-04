@@ -11,16 +11,22 @@ namespace AdoptionAgency.Frontend.View.Authentication
     public partial class RegisterView : Window
     {
         public RegisterViewModel ViewModel{ get; set; }
-        public RegisterView()
+        private MainWindow MainWindow { get; set; }
+        public RegisterView(MainWindow mainWindow)
         {
             InitializeComponent();
             ViewModel = new RegisterViewModel();
             DataContext = ViewModel;
             gendercb.ItemsSource = Enum.GetValues(typeof(Gender));
+            MainWindow = mainWindow;
         }
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            if (ViewModel.SignUp()) Close();
+            if (ViewModel.SignUp())
+            {
+                Close();
+                MainWindow.Close();
+            }
         }
     }
 }

@@ -5,56 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdoptionAgency.Frontend.View.Authentication"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="RegisterView" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF8FDFA">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="8*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Label Content="Register"
-       FontWeight="Bold"
-       VerticalAlignment="Bottom"
-       HorizontalAlignment="Center"
-       Grid.Column="1"
-       Grid.ColumnSpan="2"
-       FontSize="28"
-       />
-        <Label Content="First Name"/>
+        <TextBlock Grid.Column="1" Height="97" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontFamily="Elephant" HorizontalAlignment="Center" Foreground="#FF577B47" FontSize="19" RenderTransformOrigin="0.5,0.5" FlowDirection="RightToLeft" TextAlignment="Center"><Run Text="Register"/></TextBlock>
         <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="15">
+            <Label Content=""/>
+            <Label Content="Username" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
+            <TextBox Name="tbUsername">
+                <TextBox.Text>
+                    <Binding Path="Username" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Label Content="Password" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
+            <TextBox Name="tbPassword">
+                <TextBox.Text>
+                    <Binding Path="Password" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Label Content="First Name" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
             <TextBox Name="tbFirstName">
                 <TextBox.Text>
                     <Binding Path="FirstName" UpdateSourceTrigger="PropertyChanged">
                     </Binding>
                 </TextBox.Text>
             </TextBox>
-            <Label Content="Last Name"/>
+            <Label Content="Last Name" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
             <TextBox Name="tbLastName">
                 <TextBox.Text>
                     <Binding Path="LastName" UpdateSourceTrigger="PropertyChanged">
                     </Binding>
                 </TextBox.Text>
             </TextBox>
-            <Label Content="Gender"/>
+            <Label Content="Gender" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
             <ComboBox x:Name="gendercb" SelectedItem="{Binding Gender}" ItemsSource="{Binding GenderList}"/>
-            <Label Content="Date of Birth"/>
-            <DatePicker SelectedDate="{Binding DateOfBirth}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="15">
-            <Label Content="Email"/>
+
+            <Label Content="Email" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
             <TextBox Name="tbEmail">
                 <TextBox.Text>
                     <Binding Path="Email" UpdateSourceTrigger="PropertyChanged">
                     </Binding>
                 </TextBox.Text>
             </TextBox>
-            <Label Content="Phone Number - (Only numbers, without '-' or '+')"/>
+            <Label Content="Phone Number - (Only numbers, without '-' or '+')" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
             <TextBox Name="tbPhoneNumber">
                 <TextBox.Text>
                     <Binding Path="PhoneNumber" UpdateSourceTrigger="PropertyChanged">
@@ -62,7 +66,7 @@
                 </TextBox.Text>
             </TextBox>
         </StackPanel>
-        <Button x:Name="loginBtn" Content="Register"  
+        <Button x:Name="loginBtn" Content="Register" HorizontalAlignment="Center" Height="33"  VerticalAlignment="Top" Width="144" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant"
         Click="SignUp_Click" Grid.Row="2" Grid.Column="1"/>
     </Grid>
 </Window>

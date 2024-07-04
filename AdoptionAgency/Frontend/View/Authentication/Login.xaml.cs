@@ -11,7 +11,7 @@ namespace AdoptionAgency.Frontend.View.Authentication
         private MainWindow MainWindow { get; set; }
         public Login(MainWindow mainWindow)
         {
-            ViewModel = new();
+            ViewModel = new(mainWindow);
             DataContext = ViewModel;
             InitializeComponent();
             MainWindow = mainWindow;
