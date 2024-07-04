@@ -33,6 +33,15 @@ namespace AdoptionAgency.Backend.Repositories
             modelBuilder.Entity<AdoptionRequest>().ToTable(nameof(AdoptionRequest));
 
             modelBuilder.Entity<Post>().ToTable(nameof(Post));
+            modelBuilder.Entity<Post>()
+                .HasOne(p => p.Animal)
+                .WithMany()
+                .HasForeignKey(p => p.AnimalId);
+
+            modelBuilder.Entity<Post>()
+                .HasOne(p => p.Person)
+                .WithMany()
+                .HasForeignKey(p => p.PersonId);
             modelBuilder.Entity<Picture>().ToTable(nameof(Picture));
         }
 
