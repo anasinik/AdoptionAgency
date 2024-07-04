@@ -5,9 +5,6 @@ using AdoptionAgency.Frontend.ViewModel.Authentication;
 
 namespace AdoptionAgency.Frontend.View.Authentication
 {
-    /// <summary>
-    /// Interaction logic for RegisterView.xaml
-    /// </summary>
     public partial class RegisterView : Window
     {
         public RegisterViewModel ViewModel{ get; set; }
@@ -25,7 +22,6 @@ namespace AdoptionAgency.Frontend.View.Authentication
             if (ViewModel.SignUp())
             {
                 Close();
-                MainWindow.Close();
             }
         }
     }

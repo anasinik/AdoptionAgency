@@ -1,4 +1,5 @@
-﻿using AdoptionAgency.Backend.Domain.Model.User;
+﻿using AdoptionAgency.Backend.Domain.Model.Common;
+using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Services.AuthentificationService;
 using AdoptionAgency.Frontend.View.AdminView;
 using AdoptionAgency.Frontend.View.Authentication;
@@ -25,6 +26,11 @@ namespace AdoptionAgency.Frontend.ViewModel.Authentication
             {
                 var loginService = new LoginService();
                 App.LoggedIn = loginService.GetByCredentials(Username, Password);
+                if (App.LoggedIn.User.Status != Status.Accepted)
+                {
+                    MessageBox.Show("Your registration request is not accepted yet.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return false;
+                }
                 OpenAppropriateWindow(App.LoggedIn.User);
                 return true;
             }

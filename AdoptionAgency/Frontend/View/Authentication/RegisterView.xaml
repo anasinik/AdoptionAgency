@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="RegisterView" Height="450" Width="800">
+        Title="RegisterView" Height="600" Width="800">
     <Grid Background="#FFF8FDFA">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -59,7 +59,7 @@
                 </TextBox.Text>
             </TextBox>
             <Label Content="Phone Number - (Only numbers, without '-' or '+')" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
-            <TextBox Name="tbPhoneNumber">
+            <TextBox Name="tbPhoneNumber" Width="606">
                 <TextBox.Text>
                     <Binding Path="PhoneNumber" UpdateSourceTrigger="PropertyChanged">
                     </Binding>
