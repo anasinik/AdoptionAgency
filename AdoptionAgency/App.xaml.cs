@@ -5,7 +5,11 @@ using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 using AdoptionAgency.Backend.Repositories;
 using AdoptionAgency.Backend.Repositories.AnimalRepositories;
+<<<<<<< HEAD
+using AdoptionAgency.Frontend.ViewModel;
+=======
 using AdoptionAgency.Backend.Repositories.PostRepositories;
+>>>>>>> main
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -57,7 +61,7 @@ namespace AdoptionAgency
             using (var scope = _host.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
-                db.Database.Migrate();
+                //db.Database.Migrate();
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using AdoptionAgency.Frontend.ViewModel;
+﻿using AdoptionAgency.Backend.Services.AuthentificationService;
+using AdoptionAgency.Frontend.ViewModel;
 using AdoptionAgency.Frontend.ViewModel.Authentication;
 using System.Windows;
 
@@ -16,6 +17,9 @@ namespace AdoptionAgency.Frontend.View.Authentication
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
+            var loginService = new LoginService();
+            App.LoggedPerson = loginService
+                .GetByCredentials(ViewModel.UserName, ViewModel.Password);
             if (ViewModel.Login()) Close();
         }
     }
