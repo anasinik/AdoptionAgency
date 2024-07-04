@@ -27,21 +27,12 @@ namespace AdoptionAgency.Backend.Repositories
             modelBuilder.Entity<Person>().ToTable(nameof(Person));
             ConfigurePersonEntity(modelBuilder);
 
-            modelBuilder.Entity<Animal>().ToTable(nameof(Animal));
+            ConfigureAnimalEntity(modelBuilder);
             modelBuilder.Entity<AnimalSpecies>().ToTable(nameof(AnimalSpecies));
             modelBuilder.Entity<AnimalRating>().ToTable(nameof(AnimalRating));
             modelBuilder.Entity<AdoptionRequest>().ToTable(nameof(AdoptionRequest));
 
-            modelBuilder.Entity<Post>().ToTable(nameof(Post));
-            modelBuilder.Entity<Post>()
-                .HasOne(p => p.Animal)
-                .WithMany()
-                .HasForeignKey(p => p.AnimalId);
-
-            modelBuilder.Entity<Post>()
-                .HasOne(p => p.Person)
-                .WithMany()
-                .HasForeignKey(p => p.PersonId);
+            ConfigurePostEntity(modelBuilder);
             modelBuilder.Entity<Picture>().ToTable(nameof(Picture));
         }
 
@@ -52,6 +43,29 @@ namespace AdoptionAgency.Backend.Repositories
             {
                 optionsBuilder.UseSqlServer(config.GetConnectionString());
             }
+        }
+
+        private void ConfigurePostEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Post>().ToTable(nameof(Post));
+            modelBuilder.Entity<Post>()
+                .HasOne(p => p.Animal)
+                .WithMany()
+                .HasForeignKey(p => p.AnimalId);
+
+            modelBuilder.Entity<Post>()
+                .HasOne(p => p.Person)
+                .WithMany()
+                .HasForeignKey(p => p.PersonId);
+        }
+
+        private void ConfigureAnimalEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Animal>().ToTable(nameof(Animal));
+            modelBuilder.Entity<Animal>()
+                .HasOne(a => a.Species)
+                .WithMany()
+                .HasForeignKey(a => a.SpeciesId);
         }
 
         private void ConfigurePersonEntity(ModelBuilder modelBuilder)
