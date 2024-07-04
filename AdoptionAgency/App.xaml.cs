@@ -59,7 +59,7 @@ namespace AdoptionAgency
             using (var scope = _host.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
-                //db.Database.Migrate();
+                db.Database.Migrate();
             }
         }
 
