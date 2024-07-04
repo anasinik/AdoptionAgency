@@ -1,6 +1,6 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Backend.Services.PostServices;
-using AdoptionAgency.Backend.ViewModel.PostViewModels;
+using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 using AdoptionAgency.Frontend.ViewModel.AnimalViewModels.EntityViewModels;
 using System.Collections.ObjectModel;
 
