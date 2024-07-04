@@ -1,6 +1,7 @@
 ﻿using AdoptionAgency.Backend.Services.AnimalServices;
 using AdoptionAgency.Backend.Services.PostServices;
 using AdoptionAgency.Frontend.View.Authentication;
+using AdoptionAgency.Frontend.View.UserViews;
 using AdoptionAgency.Frontend.ViewModel;
 using System.Windows;
 

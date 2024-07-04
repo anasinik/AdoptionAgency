@@ -5,7 +5,6 @@ using AdoptionAgency.Backend.Services.AuthentificationService;
 using AdoptionAgency.Frontend.View.AdminView;
 using AdoptionAgency.Frontend.View.Authentication;
 using AdoptionAgency.Frontend.View.UserViews;
-using AdoptionAgency.Frontend.View.VolunteerView;
 using System.ComponentModel;
 using System.Security.Authentication;
 
