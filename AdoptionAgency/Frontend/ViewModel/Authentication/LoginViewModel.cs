@@ -15,6 +15,7 @@ namespace AdoptionAgency.Frontend.ViewModel.Authentication
     {
         private string _username = "";
         private string _password = "";
+        private MainWindow _mainWindow;
 
         public string UserName
         {
@@ -40,9 +41,9 @@ namespace AdoptionAgency.Frontend.ViewModel.Authentication
                 }
             }
         }
-        public LoginViewModel()
+        public LoginViewModel(MainWindow mainWindow)
         {
-
+            _mainWindow = mainWindow;
         }
         public bool Login()
         {
@@ -83,7 +84,7 @@ namespace AdoptionAgency.Frontend.ViewModel.Authentication
         }
         public void ShowRegistrationWindow()
         {
-            var registrationWindow = new RegisterView();
+            var registrationWindow = new RegisterView(_mainWindow);
             registrationWindow.Show();
         }
 

@@ -27,7 +27,7 @@ namespace AdoptionAgency.Frontend.ViewModel.VolunteerViewModel
             var personService = new PersonService();
             _members = new ObservableCollection<MemberViewModel>();
             //TODO Make GetMembersWithRequests in service
-            foreach (var member in personService.GetMembers())
+            foreach (var member in personService.GetPendingMembers())
             {
                 _members.Add(new MemberViewModel((Member)member));
             }

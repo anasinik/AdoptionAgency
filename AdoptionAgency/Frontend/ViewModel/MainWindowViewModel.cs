@@ -1,4 +1,4 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Post;
+using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 using System.Collections.ObjectModel;
 
@@ -18,9 +18,11 @@ namespace AdoptionAgency.Frontend.ViewModel
 
         private void Update()
         {
+
             Posts.Clear();
             foreach (var post in posts)
                 Posts.Add(new(post));
+
         }
     }
 }

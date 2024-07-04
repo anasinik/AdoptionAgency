@@ -1,5 +1,6 @@
 ﻿using AdoptionAgency.Backend.Configuration;
 using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Domain.Model.Person;
 using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
@@ -16,6 +17,7 @@ namespace AdoptionAgency
     public partial class App : Application
     {
         private readonly IHost _host;
+        public static Person? LoggedPerson;
 
         public App()
         {
@@ -57,7 +59,7 @@ namespace AdoptionAgency
             using (var scope = _host.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
-                db.Database.Migrate();
+                //db.Database.Migrate();
             }
         }
 

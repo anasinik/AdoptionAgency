@@ -39,6 +39,13 @@ namespace AdoptionAgency.Backend.Services
             return _repository.GetMembers();
         }
 
+        public List<Person> GetPendingMembers()
+        {
+            return _repository.GetMembers()
+                .Where(u => u.User.Status == Domain.Model.Common.Status.Pending)
+                .ToList();
+        }
+
         public List<Person> GetVolunteers()
         {
             return _repository.GetVolunteers();

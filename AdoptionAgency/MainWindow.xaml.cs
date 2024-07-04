@@ -1,5 +1,6 @@
 ﻿using AdoptionAgency.Backend.Services.AnimalServices;
 using AdoptionAgency.Backend.Services.PostServices;
+using AdoptionAgency.Frontend.View.Authentication;
 using AdoptionAgency.Frontend.ViewModel;
 using System.Windows;
 
@@ -11,22 +12,24 @@ namespace AdoptionAgency
 
         public MainWindow()
         {
+            InitializeComponent();
             var postService = new PostService();
             var animalService = new AnimalService();
             animalService.GetAll();
             ViewModel = new(postService.GetAccepted());
             DataContext = ViewModel;
-            InitializeComponent();
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var window = new Login(this);
+            window.Show();
         }
 
         private void SignupBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var window = new RegisterView(this);
+            window.Show();
         }
     }
 }
