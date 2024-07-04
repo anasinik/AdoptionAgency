@@ -15,8 +15,8 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="12*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="1" Height="97" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontFamily="Elephant" HorizontalAlignment="Center" Foreground="#FF577B47" FontSize="19" RenderTransformOrigin="0.5,0.5" FlowDirection="RightToLeft" TextAlignment="Center"><Run Text="Register"/></TextBlock>

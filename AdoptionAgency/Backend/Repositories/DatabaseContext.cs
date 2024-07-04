@@ -76,6 +76,7 @@ namespace AdoptionAgency.Backend.Repositories
                     user.Property(u => u.Username).HasColumnName("Username");
                     user.Property(u => u.Password).HasColumnName("Password");
                     user.Property(u => u.Type).HasColumnName("Type");
+                    user.Property(u => u.Status).HasColumnName("Status");
                 });
         }
     }
