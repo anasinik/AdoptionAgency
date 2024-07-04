@@ -1,6 +1,5 @@
 ﻿using AdoptionAgency.Backend.Configuration;
 using AdoptionAgency.Backend.Domain.Model.Animal;
-using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 using AdoptionAgency.Backend.Repositories;
@@ -19,8 +18,14 @@ namespace AdoptionAgency
         public App()
         {
             _host = CreateHost();
-            ServiceProviderHelper.SetServiceProvider(_host.Services as ServiceProvider);
+            Initialize();
             ApplyMigrations();
+        }
+
+        private void Initialize()
+        {
+            ServiceProviderHelper.SetServiceProvider(_host.Services as ServiceProvider);
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         private IHost CreateHost()
@@ -28,16 +33,19 @@ namespace AdoptionAgency
             return Host.CreateDefaultBuilder().ConfigureServices((context, services) =>
             {
                 var databaseConfig = new DatabaseConfig();
-                services.AddDbContext<DatabaseContext>(options =>
-                    options.UseNpgsql(databaseConfig.GetConnectionString()));
-
-                services.AddTransient<IPersonRepository, PersonRepository>();
-                services.AddTransient<ICrudRepository<Animal>, AnimalRepository>();
-                services.AddTransient<ICrudRepository<AnimalRating>, AnimalRatingRepository>();
-                services.AddTransient<ICrudRepository<AnimalSpecies>, AnimalSpeciesRepository>();
-                services.AddTransient<ICrudRepository<AdoptionRequest>, AdoptionRequestRepository>();
-
+                services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(databaseConfig.GetConnectionString()));
+                ConfigureServices(services); 
+            
             }).Build();
+        }
+
+        private void ConfigureServices(IServiceCollection services)
+        {
+            services.AddTransient<IPersonRepository, PersonRepository>();
+            services.AddTransient<ICrudRepository<Animal>, AnimalRepository>();
+            services.AddTransient<ICrudRepository<AnimalRating>, AnimalRatingRepository>();
+            services.AddTransient<ICrudRepository<AnimalSpecies>, AnimalSpeciesRepository>();
+            services.AddTransient<ICrudRepository<AdoptionRequest>, AdoptionRequestRepository>();
         }
 
         private void ApplyMigrations()

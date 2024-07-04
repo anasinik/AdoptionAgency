@@ -1,9 +1,8 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.Model.Common;
-using AdoptionAgency.Frontend.ViewModel;
 using AdoptionAgency.Backend.Domain.Model.Person;
 
-namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
+namespace AdoptionAgency.Frontend.ViewModel.AnimalViewModels.EntityViewModels
 {
     public class AdoptionRequestViewModel : ViewModelBase
     {

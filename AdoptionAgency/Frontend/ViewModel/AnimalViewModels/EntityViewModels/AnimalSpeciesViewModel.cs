@@ -1,7 +1,6 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
-using AdoptionAgency.Frontend.ViewModel;
 
-namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
+namespace AdoptionAgency.Frontend.ViewModel.AnimalViewModels.EntityViewModels
 {
     public class AnimalSpeciesViewModel : ViewModelBase
     {
