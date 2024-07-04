@@ -1,7 +1,7 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.Model.Common;
 using AdoptionAgency.Backend.Services.AnimalServices;
-using AdoptionAgency.Backend.ViewModel.PostViewModels;
+using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 using AdoptionAgency.Frontend.ViewModel.MemberViewModels;
 using System.Windows;
 using System.Windows.Controls;
