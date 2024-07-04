@@ -3,6 +3,8 @@ using AdoptionAgency.Frontend.ViewModel.VolunteerViewModel;
 using AdoptionAgency.Backend.Domain.Model;
 using System.Windows;
 using AdoptionAgency.Backend.Domain.Model.Person.Member;
+using AdoptionAgency.Backend.Domain.Model.Person;
+using AdoptionAgency.Backend.Domain.Model.Common;
 
 namespace AdoptionAgency.Frontend.View.VolunteerView
 {
@@ -21,14 +23,18 @@ namespace AdoptionAgency.Frontend.View.VolunteerView
         private void AcceptReqBtn(object sender, RoutedEventArgs e)
         {
             var member = ViewModel.SelectedMember;
-            member.User.Status = Backend.Domain.Model.Common.Status.Accepted;
+            member.User.Status = Status.Accepted;
+            var personService = new PersonService();
+            personService.Update(member.ToMember());
             var members = ViewModel.Members;
             members.Remove(member);
         }
         private void RejectReqBtn(object sender, RoutedEventArgs e)
         {
             var member = ViewModel.SelectedMember;
-            member.User.Status = Backend.Domain.Model.Common.Status.Rejected;
+            member.User.Status = Status.Rejected;
+            var personService = new PersonService();
+            personService.Update(member.ToMember());
             var members = ViewModel.Members;
             members.Remove(member);
         }
