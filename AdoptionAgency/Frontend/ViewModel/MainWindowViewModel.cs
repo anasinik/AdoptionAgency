@@ -1,98 +1,26 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Person;
-using AdoptionAgency.Backend.Domain.Model.Person.Member;
-using AdoptionAgency.Backend.Domain.Model.User;
-using AdoptionAgency.Backend.Services.AuthentificationService;
-using AdoptionAgency.Frontend.View.AdminView;
-using AdoptionAgency.Frontend.View.Authentication;
-using AdoptionAgency.Frontend.View.Member;
-using AdoptionAgency.Frontend.View.VolunteerView;
-using System.ComponentModel;
-using System.Security.Authentication;
+﻿using AdoptionAgency.Backend.Domain.Model.Post;
+using AdoptionAgency.Backend.ViewModel.PostViewModels;
+using System.Collections.ObjectModel;
 
 namespace AdoptionAgency.Frontend.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private string _username = "";
-        private string _password = "";
+        public ObservableCollection<PostViewModel> Posts { get; set; }
+        private List<Post> posts;
 
-        public string Username
+        public MainWindowViewModel(List<Post> posts)
         {
-            get { return _username; }
-            set
-            {
-                if (value != _username)
-                {
-                    _username = value;
-                    OnPropertyChanged("Username");
-                }
-            }
-        }
-        public string Password
-        {
-            get { return _password; }
-            set
-            {
-                if (value != _password)
-                {
-                    _password = value;
-                    OnPropertyChanged("Password");
-                }
-            }
-        }
-        
-
-        public MainWindowViewModel() { }
-        public bool Login()
-        {
-            return TrySignUp(Username, Password);
+            this.posts = posts;
+            Posts = new();
+            Update();
         }
 
-        private bool TrySignUp(string email, string password)
+        private void Update()
         {
-            try
-            {
-                var loginService = new LoginService();
-                User user = loginService.GetByCredentials(email, password).User;
-                OpenAppropriateWindow(user);
-                return true;
-            }
-            catch (AuthenticationException ex)
-            {
-                return false;
-            }
-        }
-
-        private void OpenAppropriateWindow(User user)
-        {
-            if (user.GetType() == typeof(Member))
-            {
-                MemberView memberView = new();
-                memberView.Show();
-            }
-            else if (user.GetType() == typeof(Volunteer))
-            {
-                VolunteerView volunteerView = new();
-                volunteerView.Show();
-            }
-            else if (user.GetType() == typeof(Administator))
-            {
-                AdminView administatorView = new();
-                administatorView.Show();
-            }
-        }
-
-        public void ShowRegistrationWindow()
-        {
-            var registrationWindow = new RegisterView();
-            registrationWindow.Show();
-        }
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            Posts.Clear();
+            foreach (var post in posts)
+                Posts.Add(new(post));
         }
     }
 }

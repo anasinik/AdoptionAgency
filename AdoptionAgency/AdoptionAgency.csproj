@@ -28,4 +28,9 @@
     <Resource Include="Frontend\Assets\Logos\logo.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Frontend\Assets\Icons\adopted.png" />
+    <Resource Include="Frontend\Assets\Icons\homeless.png" />
+  </ItemGroup>
+
 </Project>

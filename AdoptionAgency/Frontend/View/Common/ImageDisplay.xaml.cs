@@ -19,6 +19,12 @@ namespace AdoptionAgency.Frontend.View.Common
             Update();
         }
 
+        public ImageDisplay()
+        {
+            InitializeComponent();
+            DataContext = this;
+        }
+
         public void Update()
         {
             Pictures.Clear();
