@@ -14,7 +14,7 @@ namespace AdoptionAgency.Backend.Services
             _repository = ServiceProviderHelper.GetService<IPersonRepository>();   
         }
 
-        public int Add(Person person)
+        public Person Add(Person person)
         {
             return _repository.Add(person);
         }

@@ -13,10 +13,11 @@ namespace AdoptionAgency.Backend.Repositories
             _context = context;
         }
 
-        public int Add(Person person)
+        public Person Add(Person person)
         {
             _context.Person.Add(person);
-            return _context.SaveChanges();
+            _context.SaveChanges();
+            return person;
         }
 
         public void Delete(int id)

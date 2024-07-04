@@ -1,5 +1,4 @@
-﻿
-using AdoptionAgency.Backend.Domain.Model.Animal;
+﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,21 +12,21 @@ namespace AdoptionAgency.Backend.Repositories.AnimalRepositories
             _context = context;
         }
 
-        public int Add(AnimalSpecies animalSpecies)
+        public AnimalSpecies Add(AnimalSpecies animalSpecies)
         {
             var existingAnimalSpecies = GetExistingSpecies(animalSpecies.Species, animalSpecies.Breed);
+           
             if (existingAnimalSpecies != null)
-            {
-                return existingAnimalSpecies.Id;
-            }
+                return existingAnimalSpecies;
+
             return AddNewAnimalSpecies(animalSpecies);
         }
 
-        private int AddNewAnimalSpecies(AnimalSpecies animalSpecies)
+        private AnimalSpecies AddNewAnimalSpecies(AnimalSpecies animalSpecies)
         {
             _context.AnimalSpecies.Add(animalSpecies); 
             _context.SaveChanges();
-            return animalSpecies.Id;
+            return animalSpecies;
         }
 
         private AnimalSpecies? GetExistingSpecies(string species, string breed)

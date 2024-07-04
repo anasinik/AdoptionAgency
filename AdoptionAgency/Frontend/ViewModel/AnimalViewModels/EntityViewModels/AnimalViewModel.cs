@@ -1,8 +1,7 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.Model.Common;
-using AdoptionAgency.Frontend.ViewModel;
 
-namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
+namespace AdoptionAgency.Frontend.ViewModel.AnimalViewModels.EntityViewModels
 {
     public class AnimalViewModel : ViewModelBase
     {
@@ -13,11 +12,10 @@ namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
         private AnimalSpecies species;
         private DateTime birthDate;
         private string foundLocation;
-        private Place foundPlace;
         private string healthCondition;
         private string behaviour;
         private Gender gender;
-        public bool Adopted {  get; set; }
+        public bool Adopted { get; set; }
         private double weight;
         private string size;
 
@@ -56,19 +54,6 @@ namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
                 {
                     foundLocation = value;
                     OnPropertyChanged(nameof(FoundLocation));
-                }
-            }
-        }
-
-        public Place FoundPlace
-        {
-            get { return foundPlace; }
-            set
-            {
-                if (value != foundPlace)
-                {
-                    foundPlace = value;
-                    OnPropertyChanged(nameof(FoundPlace));
                 }
             }
         }
@@ -155,8 +140,6 @@ namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
                     if (string.IsNullOrEmpty(FoundLocation)) return "Found location is required";
                 }
 
-                if (columnName == "FoundPlace" && FoundPlace == null) return "Found place is required";
-
                 if (columnName == "HealthCondition")
                 {
                     if (string.IsNullOrEmpty(HealthCondition)) return "Health condition is required";
@@ -200,7 +183,7 @@ namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
 
         public Animal ToAnimal()
         {
-            return new Animal(Id, species, birthDate, foundLocation, foundPlace, healthCondition, behaviour, gender, weight, size);
+            return new Animal(Id, species, birthDate, foundLocation, healthCondition, behaviour, gender, weight, size);
         }
 
         public AnimalViewModel(Animal animal)
@@ -209,7 +192,6 @@ namespace AdoptionAgency.Backend.ViewModel.AnimalViewModels
             species = animal.Species;
             birthDate = animal.BirthDate;
             foundLocation = animal.FoundLocation;
-            foundPlace = animal.FoundPlace;
             healthCondition = animal.HealthCondition;
             behaviour = animal.Behaviour;
             gender = animal.Gender;

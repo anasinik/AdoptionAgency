@@ -13,7 +13,7 @@ namespace AdoptionAgency.Backend.Services.AnimalServices
             _repository = ServiceProviderHelper.GetService<ICrudRepository<AdoptionRequest>>();
         }
 
-        public int Add(AdoptionRequest adoptionRequest)
+        public AdoptionRequest Add(AdoptionRequest adoptionRequest)
         {
             return _repository.Add(adoptionRequest);
         }

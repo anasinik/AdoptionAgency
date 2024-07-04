@@ -13,11 +13,11 @@ namespace AdoptionAgency.Backend.Repositories.AnimalRepositories
             _context = context;
         }
 
-        public int Add(AdoptionRequest adoptionRequest)
+        public AdoptionRequest Add(AdoptionRequest adoptionRequest)
         {
             _context.AdoptionRequest.Add(adoptionRequest);
             _context.SaveChanges();
-            return adoptionRequest.Id;
+            return adoptionRequest;
         }
 
         public void Delete(int id)

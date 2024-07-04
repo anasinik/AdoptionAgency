@@ -1,7 +1,8 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.Model.Common;
-using AdoptionAgency.Backend.Domain.Model.Person.Member;
+using AdoptionAgency.Backend.Domain.Model.Person;
 using AdoptionAgency.Backend.Domain.Model.Post;
+using AdoptionAgency.Frontend.View.Common;
 using AdoptionAgency.Frontend.ViewModel;
 
 namespace AdoptionAgency.Backend.ViewModel.PostViewModels
@@ -12,9 +13,12 @@ namespace AdoptionAgency.Backend.ViewModel.PostViewModels
 
         public int Id { get; set; }
         public List<Picture> Pictures { get; set; } = new List<Picture>();
+        public ImageDisplay ImageDisplays { get; set; }
         public Animal Animal { get; set; }
-        public Member Member { get; set; }
+        public Person Person { get; set; }
         public Status Status { get; set; }
+        public string IconPath { get; set; }
+
         private string description;
 
         public string Description
@@ -59,7 +63,7 @@ namespace AdoptionAgency.Backend.ViewModel.PostViewModels
 
         public Post ToPost()
         {
-            return new Post(Id, Pictures, Animal, Member, Status, Description);
+            return new Post(Id, Pictures, Animal, Person, Status, Description);
         }
 
         public PostViewModel(Post post)
@@ -67,9 +71,15 @@ namespace AdoptionAgency.Backend.ViewModel.PostViewModels
             Id = post.Id;
             Pictures = post.Pictures;
             Animal = post.Animal;
-            Member = post.Member;
+            Person = post.Person;
             Status = post.Status;
             Description = post.Description;
+            ImageDisplays = new(post.Pictures);
+            if (!post.Animal.Adopted)
+                IconPath = "/Frontend/Assets/Icons/homeless.png";
+            else IconPath = "/Frontend/Assets/Icons/adopted.png";
+
+
         }
     }
 }

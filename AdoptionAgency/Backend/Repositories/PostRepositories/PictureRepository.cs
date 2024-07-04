@@ -1,5 +1,4 @@
-﻿
-using AdoptionAgency.Backend.Domain.Model.Post;
+﻿using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,11 +13,11 @@ namespace AdoptionAgency.Backend.Repositories.PostRepositories
             _context = context;
         }
 
-        public int Add(Picture picture)
+        public Picture Add(Picture picture)
         {
             _context.Picture.Add(picture);
             _context.SaveChanges();
-            return picture.Id;
+            return picture;
         }
 
         public void Delete(int id)

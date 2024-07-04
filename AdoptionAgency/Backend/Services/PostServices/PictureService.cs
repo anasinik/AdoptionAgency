@@ -13,7 +13,7 @@ namespace AdoptionAgency.Backend.Services.PostServices
             _repository = ServiceProviderHelper.GetService<ICrudRepository<Picture>>();
         }
 
-        public int Add(Picture picture)
+        public Picture Add(Picture picture)
         {
             return _repository.Add(picture);
         }

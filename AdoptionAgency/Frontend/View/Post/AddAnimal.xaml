@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="AdoptionAgency.Frontend.View.Post.AddAnimal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="690" d:DesignWidth="800">
+    <Grid Background="#FFF8FDFA">
+
+        <Label Content="Please enter information about the animal" HorizontalAlignment="Center" Height="35" Margin="0,33,0,0" VerticalAlignment="Top" Width="644" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" FontStyle="Italic" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <!-- first group box-->
+        <GroupBox Header="Animal spieces" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,92,0,0" Width="700" Height="192">
+            <Grid Margin="0,0,0,0" Background="#FFEDEDED" >
+
+                <Expander HorizontalAlignment="Left" Height="88" Margin="61,36,0,0" Header="Note" VerticalAlignment="Top" Width="164">
+                    <TextBlock TextWrapping="Wrap"> Before adding an animal, it is necessary to add the species.</TextBlock>
+                </Expander>
+
+                <!--animal species-->
+                <Label Content="Animal species" HorizontalAlignment="Left" Height="25" Margin="432,48,0,0" VerticalAlignment="Top" Width="224" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="432,25,0,0" TextWrapping="Wrap" 
+                BorderThickness="2" VerticalAlignment="Top" Width="224" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
+                Padding="1,0,0,0" Text="{Binding Path=AnimalSpecies.Species}"></TextBox>
+
+                <!--animal breed-->
+                <Label Content="Animal breed" HorizontalAlignment="Left" Height="24" Margin="432,100,0,0" VerticalAlignment="Top" Width="224" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <TextBox HorizontalAlignment="Left" Height="22" Margin="432,78,0,0" TextWrapping="Wrap" 
+                BorderThickness="2" VerticalAlignment="Top" Width="224" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
+                Padding="1,0,0,0" Text="{Binding Path=AnimalSpecies.Breed}"></TextBox>
+
+                <!-- add spieces button-->
+                <Button Content="Add animal spieces" HorizontalAlignment="Left" Height="28" Margin="432,129,0,0" VerticalAlignment="Top" Width="224" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant" Click="AddAnimalSpecies_Click"/>
+
+            </Grid>
+        </GroupBox>
+
+        <!--second text box-->
+        <GroupBox Header="Animal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,299,0,0" Width="700" Height="300">
+            <Grid Background="#FFEDEDED" Margin="0,0,0,0">
+
+                <!--animal behaviour-->
+                <Label Content="Animal behaviour" HorizontalAlignment="Left" Height="25" Margin="34,33,0,0" VerticalAlignment="Top" Width="264" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <TextBox x:Name="animalBehaviourTB" HorizontalAlignment="Left" Height="22" Margin="34,58,0,0" TextWrapping="Wrap" 
+                BorderThickness="2" VerticalAlignment="Top" Width="264" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
+                Padding="1,0,0,0" IsEnabled="False" Text="{Binding Path=Animal.Behaviour}"></TextBox>
+
+                <!--found location-->
+                <Label Content="Found location" HorizontalAlignment="Left" Height="24" Margin="34,90,0,0" VerticalAlignment="Top" Width="264" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <TextBox x:Name="foundLocationTB" HorizontalAlignment="Left" Height="22" Margin="34,114,0,0" TextWrapping="Wrap" 
+                BorderThickness="2" VerticalAlignment="Top" Width="264" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
+                Padding="1,0,0,0" IsEnabled="False" Text="{Binding Path=Animal.FoundLocation}"></TextBox>
+
+                <!--health condition-->
+                <Label Content="Health condition" HorizontalAlignment="Left" Height="24" Margin="34,150,0,0" VerticalAlignment="Top" Width="264" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <TextBox x:Name="healthConditionTB" HorizontalAlignment="Left" Height="22" Margin="34,174,0,0" TextWrapping="Wrap" 
+                BorderThickness="2" VerticalAlignment="Top" Width="264" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
+                Padding="1,0,0,0" IsEnabled="False" Text="{Binding Path=Animal.HealthCondition}"></TextBox>
+
+                <!--weight-->
+                <Label Content="Weight" HorizontalAlignment="Left" Height="24" Margin="394,34,0,0" VerticalAlignment="Top" Width="132" Foreground="#FF577B47"  FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <TextBox x:Name="weightTB" HorizontalAlignment="Left" Height="22" Margin="394,58,0,0" TextWrapping="Wrap" 
+                BorderThickness="2" VerticalAlignment="Top" Width="118" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
+                Padding="1,0,0,0" IsEnabled="False" Text="{Binding Path=Animal.Weight}"></TextBox>
+
+                <!--size-->
+                <Label Content="Size" HorizontalAlignment="Left" Height="24" Margin="526,33,0,0" VerticalAlignment="Top" Width="132" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <TextBox x:Name="sizeTB" HorizontalAlignment="Left" Height="22" Margin="531,58,0,0" TextWrapping="Wrap" 
+                BorderThickness="2" VerticalAlignment="Top" Width="127" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
+                Padding="1,0,0,0" IsEnabled="False" Text="{Binding Path=Animal.Size}"></TextBox>
+
+                <!--gender-->
+                <Label Content="Gender" HorizontalAlignment="Left" Height="24" Margin="394,90,0,0" VerticalAlignment="Top" Width="264" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+                <ComboBox x:Name="genderCB" HorizontalAlignment="Left" Height="22" Width="264" Margin="394,114,0,141" BorderBrush="#FFE8E8E8" IsEnabled="False" SelectedItem="{Binding Animal.Gender}"/>
+
+                <!--birthdate-->
+                <Label Content="BirthDate" HorizontalAlignment="Left" Height="24" Margin="394,150,0,0" VerticalAlignment="Top" Width="264" Foreground="#FF577B47"  FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5"/>
+
+                <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Height="24" Width="264" Background="#FFEDEDED" Margin="394,172,0,81" IsEnabled="False" SelectedDate="{Binding Animal.BirthDate}">
+                    <DatePicker.BorderBrush> 
+                        <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1" >
+                            <GradientStop Color="#FFEDEDED"/>
+                        </LinearGradientBrush>
+                    </DatePicker.BorderBrush>
+                </DatePicker>
+
+                <Button x:Name="addAnimalBtn" Content="Add animal" HorizontalAlignment="Left" Height="28" Margin="166,239,0,0" VerticalAlignment="Top" Width="346" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant" IsEnabled="False" Click="AddAnimal_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <Button x:Name="nextPageBtn" IsEnabled="false" Margin="657,604,50,10" Click="NextPage_Click">
+            <Image Source="/Frontend/Assets/Icons/continue.png" Stretch="Fill" Width="73"/>
+        </Button>
+    </Grid>
+
+</UserControl>

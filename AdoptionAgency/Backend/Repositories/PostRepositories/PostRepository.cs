@@ -13,11 +13,11 @@ namespace AdoptionAgency.Backend.Repositories.PostRepositories
             _context = context;
         }
 
-        public int Add(Post post)
+        public Post Add(Post post)
         {
             _context.Post.Add(post);
             _context.SaveChanges();
-            return post.Id;
+            return post;
         }
 
         public void Delete(int id)
@@ -36,7 +36,10 @@ namespace AdoptionAgency.Backend.Repositories.PostRepositories
 
         public List<Post> GetAll()
         {
-            return _context.Post.ToList();
+            return _context.Post.Include(p => p.Animal)
+                                .Include(p => p.Person)
+                                .Include(p => p.Pictures)
+                                .ToList();
         }
 
         public void Update(Post post)
