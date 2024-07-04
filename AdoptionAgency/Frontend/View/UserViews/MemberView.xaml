@@ -31,9 +31,9 @@
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20">
                 <Button x:Name="addPostBtn" Content="Add new post" Height="33" Width="100" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
-                        Margin="10,0"/>
+                        Margin="10,0" Click="AddPostBtn_Click"/>
                 <Button x:Name="logoutBtn" Content="Logout" Height="33" Width="100" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" 
-                         Margin="10,0"/>
+                         Margin="10,0" Click="logoutBtn_Click"/>
             </StackPanel>
         </Grid>
 

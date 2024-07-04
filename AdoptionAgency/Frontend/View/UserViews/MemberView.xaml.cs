@@ -57,5 +57,15 @@ namespace AdoptionAgency.Frontend.View.UserViews
             MessageBox.Show(text, "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        private void AddPostBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Post.Post();
+            window.Show();
+        }
+
+        private void logoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
