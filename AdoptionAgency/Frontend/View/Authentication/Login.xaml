@@ -7,12 +7,12 @@
         WindowStartupLocation="CenterScreen"
         Title="Login" Height="500" Width="400">
     <Grid Background="#FFF8FDFA">
-        <TextBlock Height="97" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontFamily="Elephant" HorizontalAlignment="Center" Foreground="#FF577B47" FontSize="19" RenderTransformOrigin="0.5,0.5" FlowDirection="RightToLeft" TextAlignment="Center"><Run Text="Welcome to the Animal Adoption Agency "/></TextBlock>
-        <!--label and box for email-->
-        <Label x:Name="emaillbl" Content="   username" HorizontalAlignment="Center" Height="26" Margin="0,242,0,0" VerticalAlignment="Top" Width="310" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
-        <TextBox x:Name="emailtb" HorizontalAlignment="Center" Height="23" Margin="0,219,0,0" TextWrapping="Wrap" 
+        <TextBlock Height="97" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontFamily="Elephant" HorizontalAlignment="Center" Foreground="#FF577B47" FontSize="19" FlowDirection="RightToLeft" TextAlignment="Center"><Run Text="Welcome to the Animal Adoption Agency "/></TextBlock>
+        <!--label and box for username-->
+        <Label Content="   username" HorizontalAlignment="Center" Height="26" Margin="0,242,0,0" VerticalAlignment="Top" Width="310" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" InputScope="Srgs" Padding="6,5,5,5" FontStyle="Italic"/>
+        <TextBox HorizontalAlignment="Center" Height="23" Margin="0,219,0,0" TextWrapping="Wrap" 
               BorderThickness="2" VerticalAlignment="Top" Width="310" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
-                 Text="{Binding Path=Email}" Padding="1,0,0,0">
+                 Text="{Binding Path=Username}" Padding="1,0,0,0">
             <TextBox.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -21,13 +21,13 @@
             </TextBox.OpacityMask>
         </TextBox>
         <!--label and box for password-->
-        <Label x:Name="passwordlbl" Content="   password" HorizontalAlignment="Center" Height="26" Margin="0,314,0,0" VerticalAlignment="Top" Width="310" Foreground="#FF577B47" RenderTransformOrigin="0.5,0.5" FontFamily="Elephant" FontStretch="Expanded" FontStyle="Italic"/>
-        <TextBox x:Name="passwordtb" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="24"
+        <Label Content="   password" HorizontalAlignment="Center" Height="26" Margin="0,314,0,0" VerticalAlignment="Top" Width="310" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" FontStyle="Italic"/>
+        <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="24"
                   SelectionBrush="#FFEFFCF3" BorderThickness="2" BorderBrush="#FF7B996F" Background="#FFEFFCF3" SelectionTextBrush="#FFEFFCF3" Foreground="#FFEFFCF3" Margin="0,290,0,0"
                  Text="{Binding Path=Password}"/>
         <Button x:Name="loginBtn" Content="Login" HorizontalAlignment="Center" Height="33" Margin="0,393,0,0" VerticalAlignment="Top" Width="144" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant" 
                 Click="LoginBtn_Click" />
-        
+
 
     </Grid>
 </Window>
