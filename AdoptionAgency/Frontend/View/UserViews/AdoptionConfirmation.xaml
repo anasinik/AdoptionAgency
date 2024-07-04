@@ -1,0 +1,25 @@
+﻿<Window x:Class="AdoptionAgency.Frontend.View.UserViews.AdoptionConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="AdoptionConfirmation" Height="250" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFE5E5E5">
+        <TextBlock Text="Do you want to permanently adopt this animal?" Foreground="#FF577B47" FontSize="12" FontFamily="Elephant" TextWrapping="Wrap" Margin="0,20,0,10" HorizontalAlignment="Center" Width="292" />
+
+        <GroupBox Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="110">
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                <RadioButton Content="Yes" Margin="5" Checked="Yes_Checked"/>
+                <RadioButton Content="No" Margin="5" Checked="No_Checked" />
+            </StackPanel>
+        </GroupBox>
+
+        <TextBlock x:Name="howLongTB" Text="How long would you keep the animal?" Foreground="#FF577B47" FontSize="12" FontFamily="Elephant" TextWrapping="Wrap" Margin="0,117,0,13" HorizontalAlignment="Center" Width="236" />
+        <DatePicker Name="datePicker" Margin="0,145,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" 
+                    SelectedDateChanged="DateChanged"/>
+
+        <Button x:Name="confrimBtn" Content="Confrim" Width="100" BorderBrush="White" Background="#FFAFBDAD" Foreground="#FF577B47" FontFamily="Elephant" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+         Margin="0,0,0,10" Click="confrimBtn_Click"/>
+    </Grid>
+</Window>

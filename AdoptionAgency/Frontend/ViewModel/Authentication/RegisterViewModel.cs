@@ -1,5 +1,5 @@
 ﻿using AdoptionAgency.Backend.Services;
-using AdoptionAgency.Frontend.ViewModel.MemberVM;
+using AdoptionAgency.Frontend.ViewModel.MemberViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -47,7 +47,7 @@ namespace AdoptionAgency
             services.AddTransient<ICrudRepository<Animal>, AnimalRepository>();
             services.AddTransient<ICrudRepository<AnimalRating>, AnimalRatingRepository>();
             services.AddTransient<ICrudRepository<AnimalSpecies>, AnimalSpeciesRepository>();
-            services.AddTransient<ICrudRepository<AdoptionRequest>, AdoptionRequestRepository>();
+            services.AddTransient<IAdoptionRequestRepository, AdoptionRequestRepository>();
             services.AddTransient<ICrudRepository<Post>, PostRepository>();
             services.AddTransient<ICrudRepository<Picture>, PictureRepository>();
         }
