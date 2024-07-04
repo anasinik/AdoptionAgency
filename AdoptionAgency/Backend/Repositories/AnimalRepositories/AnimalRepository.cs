@@ -31,12 +31,14 @@ namespace AdoptionAgency.Backend.Repositories.AnimalRepositories
 
         public Animal Get(int id)
         {
-            return _context.Animal.Find(id);
+            return _context.Animal
+                .Include(a => a.Species)
+                .FirstOrDefault(a => a.Id == id);
         }
 
         public List<Animal> GetAll()
         {
-           return _context.Animal.ToList();
+            return _context.Animal.Include(a => a.Species).ToList();
         }
 
         public void Update(Animal animal)

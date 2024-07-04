@@ -6,6 +6,7 @@ namespace AdoptionAgency.Backend.Domain.Model.Animal
     {
         public int Id { get; set; }
         public AnimalSpecies Species {  get; set; }
+        public int SpeciesId {  get; set; }
         public DateTime BirthDate { get; set; }
         public string FoundLocation { get; set; }
         public string HealthCondition { get; set; }

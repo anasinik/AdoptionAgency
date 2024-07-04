@@ -36,7 +36,10 @@ namespace AdoptionAgency.Backend.Repositories.PostRepositories
 
         public List<Post> GetAll()
         {
-            return _context.Post.ToList();
+            return _context.Post.Include(p => p.Animal)
+                                .Include(p => p.Person)
+                                .Include(p => p.Pictures)
+                                .ToList();
         }
 
         public void Update(Post post)

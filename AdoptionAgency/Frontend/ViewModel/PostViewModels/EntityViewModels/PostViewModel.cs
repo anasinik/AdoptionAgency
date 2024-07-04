@@ -1,6 +1,6 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Animal;
 using AdoptionAgency.Backend.Domain.Model.Common;
-using AdoptionAgency.Backend.Domain.Model.Person.Member;
+using AdoptionAgency.Backend.Domain.Model.Person;
 using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Frontend.View.Common;
 using AdoptionAgency.Frontend.ViewModel;
@@ -15,7 +15,7 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
         public List<Picture> Pictures { get; set; } = new List<Picture>();
         public ImageDisplay ImageDisplays { get; set; }
         public Animal Animal { get; set; }
-        public Member Member { get; set; }
+        public Person Person { get; set; }
         public Status Status { get; set; }
         public string IconPath { get; set; }
 
@@ -63,7 +63,7 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
 
         public Post ToPost()
         {
-            return new Post(Id, Pictures, Animal, Member, Status, Description);
+            return new Post(Id, Pictures, Animal, Person, Status, Description);
         }
 
         public PostViewModel(Post post)
@@ -71,7 +71,7 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
             Id = post.Id;
             Pictures = post.Pictures;
             Animal = post.Animal;
-            Member = post.Member;
+            Person = post.Person;
             Status = post.Status;
             Description = post.Description;
             ImageDisplays = new(post.Pictures);
