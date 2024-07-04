@@ -9,12 +9,12 @@
 
         <TextBox HorizontalAlignment="Center" Height="94" Margin="0,52,0,0" TextWrapping="Wrap" 
                 BorderThickness="2" VerticalAlignment="Top" Width="378" VerticalContentAlignment="Center" Background="#FFEFFCF3" BorderBrush="#FF7B996F" FontFamily="Bahnschrift Light" SelectionTextBrush="#FFF3B0B0" SelectionBrush="#FFFFEBEB" 
-                Padding="1,0,0,0"></TextBox>
+                Padding="1,0,0,0" Text="{Binding Post.Description}"></TextBox>
 
         <Label Content="Please enter post description" HorizontalAlignment="Center" Height="37" Margin="0,10,0,0" VerticalAlignment="Top" Width="378" Foreground="#FF577B47" FontFamily="Elephant" FontStretch="Expanded" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Grid x:Name="pictureGrid" Background="AliceBlue"  HorizontalAlignment="Center" Height="322" Margin="0,168,0,0" VerticalAlignment="Top" Width="478"/>
-        <Button Content="Attach pictures" HorizontalAlignment="Center" Height="50" Margin="0,526,0,0" VerticalAlignment="Top" Width="378" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant" IsEnabled="False"/>
-        <Button Content="Publish Post" HorizontalAlignment="Center" Height="50" Margin="0,601,0,0" VerticalAlignment="Top" Width="378" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant" IsEnabled="False"/>
+        <Grid x:Name="pictureGrid" HorizontalAlignment="Center" Height="322" Margin="0,168,0,0" VerticalAlignment="Top" Width="478"/>
+        <Button Content="Attach pictures" HorizontalAlignment="Center" Height="50" Margin="0,526,0,0" VerticalAlignment="Top" Width="378" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant" Click="AttachPicture_Click"/>
+        <Button Content="Publish Post" HorizontalAlignment="Center" Height="50" Margin="0,601,0,0" VerticalAlignment="Top" Width="378" BorderBrush="White" Background="#FFDADADA" Foreground="#FF577B47" FontFamily="Elephant" Click="PublishPost_Click"/>
 
     </Grid>
 </UserControl>

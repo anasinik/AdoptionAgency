@@ -10,10 +10,10 @@ namespace AdoptionAgency.Backend.Domain.Model.Animal
         public DateTime SentAt {  get; set; }
         public DateTime ReceivedAt {  get; set; }
         public Status Status { get; set; }
-        public DateTime FosterUntil {  get; set; }  // If it's a permanent adoption, this date is null
+        public DateTime? FosterUntil {  get; set; }  // If it's a permanent adoption, this date is null
 
         public AdoptionRequest() { } 
-        public AdoptionRequest(int id, Person.Person adopter, Animal animal, DateTime sentAt, DateTime receivedAt, Status status, DateTime fosterUntil)
+        public AdoptionRequest(int id, Person.Person adopter, Animal animal, DateTime sentAt, DateTime receivedAt, Status status, DateTime? fosterUntil)
 
         {
             Id = id;

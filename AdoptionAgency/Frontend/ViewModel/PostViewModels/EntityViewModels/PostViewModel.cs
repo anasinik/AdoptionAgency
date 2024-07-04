@@ -5,7 +5,7 @@ using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Frontend.View.Common;
 using AdoptionAgency.Frontend.ViewModel;
 
-namespace AdoptionAgency.Backend.ViewModel.PostViewModels
+namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels
 {
     public class PostViewModel : ViewModelBase
     {
@@ -18,6 +18,8 @@ namespace AdoptionAgency.Backend.ViewModel.PostViewModels
         public Person Person { get; set; }
         public Status Status { get; set; }
         public string IconPath { get; set; }
+
+        public string Author { get; set; }
 
         private string description;
 
@@ -78,7 +80,7 @@ namespace AdoptionAgency.Backend.ViewModel.PostViewModels
             if (!post.Animal.Adopted)
                 IconPath = "/Frontend/Assets/Icons/homeless.png";
             else IconPath = "/Frontend/Assets/Icons/adopted.png";
-
+            Author = $"{post.Person.Name} {post.Person.LastName}";
 
         }
     }

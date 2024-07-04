@@ -1,11 +1,6 @@
-﻿using AdoptionAgency.Backend.Domain.Model.User;
+using AdoptionAgency.Backend.Domain.Model.User;
 using AdoptionAgency.Backend.Services;
-using AdoptionAgency.Frontend.ViewModel.MemberVM;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AdoptionAgency.Frontend.ViewModel.MemberViewModels;
 using System.Windows;
 
 namespace AdoptionAgency.Frontend.ViewModel.Authentication

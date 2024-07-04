@@ -15,7 +15,7 @@ namespace AdoptionAgency.Frontend.ViewModel.AnimalViewModels.EntityViewModels
         private DateTime sentAt;
         private DateTime receivedAt;
         private Status status;
-        private DateTime fosterUntil;
+        private DateTime? fosterUntil;
 
         public Person Adopter
         {
@@ -82,7 +82,7 @@ namespace AdoptionAgency.Frontend.ViewModel.AnimalViewModels.EntityViewModels
             }
         }
 
-        public DateTime FosterUntil
+        public DateTime? FosterUntil
         {
             get { return fosterUntil; }
             set

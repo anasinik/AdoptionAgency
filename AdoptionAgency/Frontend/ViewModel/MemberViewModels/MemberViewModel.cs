@@ -1,7 +1,7 @@
 ﻿using AdoptionAgency.Backend.Domain.Model.Person.Member;
 using AdoptionAgency.Backend.Domain.Model.User;
 
-namespace AdoptionAgency.Frontend.ViewModel.MemberVM
+namespace AdoptionAgency.Frontend.ViewModel.MemberViewModels
 {
     public class MemberViewModel : ViewModelBase
     {

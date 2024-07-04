@@ -1,15 +1,12 @@
 ﻿using AdoptionAgency.Backend.Configuration;
 using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Backend.Domain.Model.Person;
 using AdoptionAgency.Backend.Domain.Model.Post;
 using AdoptionAgency.Backend.Domain.RepositoryInterfaces;
 using AdoptionAgency.Backend.Helpers;
 using AdoptionAgency.Backend.Repositories;
 using AdoptionAgency.Backend.Repositories.AnimalRepositories;
-<<<<<<< HEAD
-using AdoptionAgency.Frontend.ViewModel;
-=======
 using AdoptionAgency.Backend.Repositories.PostRepositories;
->>>>>>> main
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,6 +17,7 @@ namespace AdoptionAgency
     public partial class App : Application
     {
         private readonly IHost _host;
+        public static Person? LoggedPerson;
 
         public App()
         {
@@ -51,7 +49,7 @@ namespace AdoptionAgency
             services.AddTransient<ICrudRepository<Animal>, AnimalRepository>();
             services.AddTransient<ICrudRepository<AnimalRating>, AnimalRatingRepository>();
             services.AddTransient<ICrudRepository<AnimalSpecies>, AnimalSpeciesRepository>();
-            services.AddTransient<ICrudRepository<AdoptionRequest>, AdoptionRequestRepository>();
+            services.AddTransient<IAdoptionRequestRepository, AdoptionRequestRepository>();
             services.AddTransient<ICrudRepository<Post>, PostRepository>();
             services.AddTransient<ICrudRepository<Picture>, PictureRepository>();
         }
