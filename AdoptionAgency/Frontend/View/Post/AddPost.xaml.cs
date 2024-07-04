@@ -1,4 +1,5 @@
-﻿using AdoptionAgency.Frontend.View.Common;
+﻿using AdoptionAgency.Backend.Domain.Model.Animal;
+using AdoptionAgency.Frontend.View.Common;
 using AdoptionAgency.Frontend.ViewModel.PostViewModels.PageViewModels;
 using System.Windows.Controls;
 
@@ -7,11 +8,15 @@ namespace AdoptionAgency.Frontend.View.Post
     public partial class AddPost : UserControl
     {
         public AddPostViewModel AddPostViewModel { get; set; }
-        public AddPost()
+        private Post _parentWindow;
+
+        public AddPost(Post parentWindow, Animal animal)
         {
             InitializeComponent();
             AddPostViewModel = new();
             DataContext = AddPostViewModel;
+            AddPostViewModel.Post.Animal = animal;
+            _parentWindow = parentWindow;
             pictureGrid.Children.Add(new ImageDisplay(AddPostViewModel.Post.Pictures));
         }
 
@@ -24,7 +29,8 @@ namespace AdoptionAgency.Frontend.View.Post
 
         private void PublishPost_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-                AddPostViewModel.PublishPost();
+            if (AddPostViewModel.PublishPost())
+                _parentWindow.Close();
         }
 
     }

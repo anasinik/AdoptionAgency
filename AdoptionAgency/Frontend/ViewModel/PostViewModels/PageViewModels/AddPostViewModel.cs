@@ -1,4 +1,8 @@
-﻿using AdoptionAgency.Backend.Domain.Model.Post;
+﻿using AdoptionAgency.Backend.Domain.Model.Common;
+using AdoptionAgency.Backend.Domain.Model.Post;
+using AdoptionAgency.Backend.Domain.Model.User;
+using AdoptionAgency.Backend.Services;
+using AdoptionAgency.Backend.Services.PostServices;
 using AdoptionAgency.Frontend.ViewModel.PostViewModels.EntityViewModels;
 using Microsoft.Win32;
 using System.IO;
@@ -69,10 +73,34 @@ namespace AdoptionAgency.Frontend.ViewModel.PostViewModels.PageViewModels
             Post.Pictures.Add(new Picture(filePath));
         }
 
-        public void PublishPost()
+        public bool PublishPost()
         {
-            // TODO: implement
-        }
+            var postService = new PostService();
 
+            // TODO: next 2 lines are temporary, shoud be loggedIn
+            // uncomment -> Post.Person = LoggedIn;
+            var personService = new PersonService();
+            Post.Person = personService.GetAll()[1];
+
+            if (Post.Description == null || Post.Pictures.Count == 0)
+            {
+                MessageBox.Show("You must enter a description and at least one image.");
+                return false;
+            }
+
+            if (Post.Person.User.Type == UserType.Volunteer)
+            {
+                MessageBox.Show("Post successfully published");
+                Post.Status = Status.Accepted;
+            }
+            else
+            {
+                Post.Status = Status.Pending;
+                MessageBox.Show("Post request sent. Please wait for a volunteer to approve.");
+            }
+            
+            postService.Add(Post.ToPost());
+            return true;
+        }
     }   
 }
