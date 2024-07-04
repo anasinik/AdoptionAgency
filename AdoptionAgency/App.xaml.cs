@@ -17,7 +17,7 @@ namespace AdoptionAgency
     public partial class App : Application
     {
         private readonly IHost _host;
-        public static Person? LoggedPerson;
+        public static Person? LoggedIn;
 
         public App()
         {
@@ -59,7 +59,7 @@ namespace AdoptionAgency
             using (var scope = _host.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
-                //db.Database.Migrate();
+                db.Database.Migrate();
             }
         }
 
